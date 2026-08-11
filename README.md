@@ -1,29 +1,61 @@
-# CivicDataForge — Civic & Public-Records Data (MCP)
+# CivicDataForge — Official Public-Records Data for AI Agents
 
-MCP server exposing CivicDataForge's catalog of public-records and government open-data tools. Give your AI agent structured, pay-per-use access to permits, licensing, compliance, and civic datasets — sourced from official open-data portals, one clean schema per dataset.
+CivicDataForge gives MCP-compatible agents structured access to official government records through the
+Apify MCP gateway. The current bundle focuses on short-term-rental permits, federal healthcare exclusions,
+childcare licensing and compliance, and NYC film permits.
 
-Website: https://civicdataforge.pages.dev · Store: https://apify.com/civicdataforge
+Website: <https://civicdataforge.pages.dev>
 
-## Add to your MCP client
+Apify Store: <https://apify.com/civicdataforge>
 
-Add this one remote MCP server URL (works with Claude, Cursor, and any MCP-compatible client):
+Live STR proof: <https://apify.com/civicdataforge/str-permit-registry/examples/check-orlando-str-permits>
 
-https://mcp.apify.com?tools=civicdataforge/leie-exclusion-screening,civicdataforge/str-permit-registry,civicdataforge/texas-childcare-licensing,civicdataforge/nyc-film-permits,civicdataforge/newsletter-data
+## Add the remote MCP server
 
-Your agent authenticates with your own Apify key and pays per record — no separate signup. Powered by the Apify MCP gateway.
+Use this Streamable HTTP endpoint:
 
-## Tools
+```text
+https://mcp.apify.com/?tools=civicdataforge/leie-exclusion-screening,civicdataforge/str-permit-registry,civicdataforge/texas-childcare-licensing,civicdataforge/nyc-film-permits
+```
 
-| Tool | What it returns | For |
-|------|-----------------|-----|
-| leie-exclusion-screening | OIG LEIE exclusion screening by NPI + name; or the full list by state/specialty | healthcare compliance, credentialing |
-| str-permit-registry | official city short-term-rental permit records (status, address, expiration) | proptech, lending, STR compliance |
-| texas-childcare-licensing | licensed childcare operations + inspection/deficiency history | insurers, childcare SaaS, franchises |
-| nyc-film-permits | NYC film/TV shooting permits — exact streets, dates, category | location scouts, production services |
-| newsletter-data | Substack archive + benchmark analytics (paid ratio, cadence, engagement) | media intel, ad-buyers |
+Send your Apify API token in the `Authorization` header:
 
-More datasets ship continuously — property violations, music-publishing splits, multi-state childcare, LA/West Hollywood film permits, and more. See the full catalog at https://civicdataforge.pages.dev and https://apify.com/civicdataforge.
+```text
+Authorization: Bearer YOUR_APIFY_TOKEN
+```
 
-## License
+An Apify account and API token are required. Each Actor has its own pricing, input schema, source notes, and
+usage limits on its Store page.
 
-MIT. Data sourced from public government open-data portals, accessed logged-out.
+## Current tools
+
+| Tool | What it returns | Typical workflow |
+|---|---|---|
+| `str-permit-registry` | Official STR permit/license status, address, dates, source links, and normalized jurisdiction fields across 29 supported US jurisdictions | Property compliance, registry monitoring, and municipal research |
+| `leie-exclusion-screening` | HHS-OIG LEIE records filtered by name, NPI, state, specialty, or exclusion type | Healthcare compliance and credentialing support |
+| `texas-childcare-licensing` | Licensed childcare operations with inspection and deficiency fields where the state publishes them | Facility research and compliance support |
+| `nyc-film-permits` | NYC film and television permit locations, dates, boroughs, categories, and precincts | Location research and production planning |
+
+## Fastest proof path
+
+The public Orlando task runs the STR Actor with a bounded input and exposes the resulting official records,
+field structure, source links, and integration routes:
+
+<https://apify.com/civicdataforge/str-permit-registry/examples/check-orlando-str-permits>
+
+For a downloadable evaluation artifact, the website publishes a 100-row STR sample covering all 29 supported
+jurisdictions together with a SHA-256 checksum:
+
+<https://civicdataforge.pages.dev/str-permit-sample>
+
+## Use boundary
+
+These tools support research and compliance workflows. They are not consumer reports and must not be used as
+the sole basis for credit, insurance, employment, housing, or other eligibility decisions. Preserve the
+official source links and review the source-specific limitations documented by each Actor.
+
+## Repository scope and license
+
+This repository publishes discovery and connection metadata for the hosted remote MCP endpoint; the data
+Actors run on Apify. Repository metadata and documentation are MIT-licensed. Government-source terms and
+record-level use restrictions remain source-specific and are documented on the corresponding Actor pages.
