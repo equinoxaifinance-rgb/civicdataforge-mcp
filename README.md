@@ -37,6 +37,21 @@ Authorization: Bearer YOUR_APIFY_TOKEN
 An Apify account and API token are required. Each Actor has its own pricing, input schema, source notes, and
 usage limits on its Store page.
 
+## Run the installable stdio gateway
+
+This repository also contains a credential-safe stdio distribution for MCP clients and Glama deployments.
+Its seven schemas are available during discovery without a credential. Calls require the installing user's
+own `APIFY_TOKEN`; the gateway never embeds a developer token and never returns the token in results.
+
+```bash
+npm ci
+APIFY_TOKEN=YOUR_APIFY_TOKEN npm start
+```
+
+For an MCP client, use `node /absolute/path/to/server.mjs` as the command and supply `APIFY_TOKEN` through
+the client's secret environment configuration. Successful calls return the Apify run ID, dataset ID, status,
+and up to 1,000 dataset rows. Larger outputs remain available from the caller-owned Apify dataset.
+
 ## Current tools
 
 | Tool | What it returns | Typical workflow |
@@ -73,6 +88,7 @@ official source links and review the source-specific limitations documented by e
 
 ## Repository scope and license
 
-This repository publishes discovery and connection metadata for the hosted remote MCP endpoint; the data
-Actors run on Apify. Repository metadata and documentation are licensed under the included [MIT License](LICENSE). Government-source terms and
-record-level use restrictions remain source-specific and are documented on the corresponding Actor pages.
+This repository publishes discovery metadata for the hosted remote MCP endpoint and an installable stdio
+gateway that dispatches the same seven tools to Apify; the data Actors still run on Apify. Gateway code,
+metadata, and documentation are licensed under the included [MIT License](LICENSE). Government-source terms
+and record-level use restrictions remain source-specific and are documented on the corresponding Actor pages.

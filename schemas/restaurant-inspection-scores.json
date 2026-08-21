@@ -1,0 +1,87 @@
+{
+  "title": "Restaurant Inspection Evidence input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "cities": {
+      "title": "Jurisdictions",
+      "type": "array",
+      "description": "Official inspection feeds to query. Every output and run receipt discloses source age, row grain, and source status.",
+      "editor": "select",
+      "items": {
+        "type": "string",
+        "enum": [
+          "nyc",
+          "chicago",
+          "austin",
+          "cincinnati",
+          "boulder",
+          "montgomery",
+          "king_county"
+        ],
+        "enumTitles": [
+          "New York City, NY",
+          "Chicago, IL",
+          "Austin, TX",
+          "Cincinnati, OH",
+          "Boulder County, CO",
+          "Montgomery County, MD",
+          "King County, WA"
+        ]
+      },
+      "default": [
+        "chicago"
+      ],
+      "prefill": [
+        "chicago"
+      ]
+    },
+    "businessNameContains": {
+      "title": "Business name contains",
+      "type": "string",
+      "description": "Case-insensitive establishment-name substring. Applied server-side where supported and verified client-side for every source.",
+      "editor": "textfield",
+      "nullable": true
+    },
+    "resultContains": {
+      "title": "Result or grade contains",
+      "type": "string",
+      "description": "Case-insensitive substring on the jurisdiction's published result or grade. A source with no such field returns no matches; scores are never guessed into grades.",
+      "editor": "textfield",
+      "nullable": true
+    },
+    "since": {
+      "title": "Inspections since",
+      "type": "string",
+      "description": "Inclusive ISO date YYYY-MM-DD.",
+      "editor": "textfield",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+      "nullable": true
+    },
+    "until": {
+      "title": "Inspections through",
+      "type": "string",
+      "description": "Inclusive ISO date YYYY-MM-DD.",
+      "editor": "textfield",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+      "nullable": true
+    },
+    "maxRecordsPerCity": {
+      "title": "Maximum records per jurisdiction",
+      "type": "integer",
+      "description": "Bounded newest-first query limit per jurisdiction (1-5,000).",
+      "minimum": 1,
+      "maximum": 5000,
+      "default": 100,
+      "prefill": 25
+    },
+    "socrataAppToken": {
+      "title": "Socrata application token",
+      "type": "string",
+      "description": "Optional caller-owned app token for a dedicated Socrata rate-limit pool. It is sent only as X-App-Token and never returned.",
+      "editor": "textfield",
+      "isSecret": true,
+      "nullable": true
+    }
+  }
+}

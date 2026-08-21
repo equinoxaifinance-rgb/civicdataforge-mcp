@@ -1,0 +1,121 @@
+{
+  "title": "STR Permit Registry input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "cities": {
+      "title": "Cities",
+      "type": "array",
+      "description": "Which of the 29 covered cities to pull. Published fields vary by city — see the README coverage table.",
+      "editor": "select",
+      "items": {
+        "type": "string",
+        "enum": [
+          "seattle",
+          "orlando",
+          "new_orleans",
+          "denver",
+          "chicago",
+          "marin",
+          "norfolk",
+          "nashville",
+          "osceola_county",
+          "polk_county",
+          "austin",
+          "houston",
+          "sacramento",
+          "san_bernardino",
+          "bend",
+          "aspen",
+          "philadelphia",
+          "albuquerque",
+          "asheville",
+          "louisville",
+          "arlington",
+          "san_diego",
+          "scottsdale",
+          "huntington_beach",
+          "coconino",
+          "san_juan",
+          "chattanooga",
+          "boston",
+          "kansas_city"
+        ],
+        "enumTitles": [
+          "Seattle, WA",
+          "Orlando, FL",
+          "New Orleans, LA",
+          "Denver, CO",
+          "Chicago, IL",
+          "Marin County, CA",
+          "Norfolk, VA",
+          "Nashville, TN",
+          "Osceola County, FL",
+          "Polk County, FL",
+          "Austin, TX",
+          "Houston, TX",
+          "Sacramento, CA",
+          "San Bernardino County, CA",
+          "Bend, OR",
+          "Aspen, CO",
+          "Philadelphia, PA",
+          "Albuquerque, NM",
+          "Asheville, NC",
+          "Louisville, KY",
+          "Arlington, TX",
+          "San Diego, CA",
+          "Scottsdale, AZ",
+          "Huntington Beach, CA",
+          "Coconino County, AZ",
+          "San Juan County, WA",
+          "Chattanooga, TN",
+          "Boston, MA",
+          "Kansas City, MO"
+        ]
+      },
+      "default": [
+        "orlando"
+      ],
+      "prefill": [
+        "orlando"
+      ]
+    },
+    "status": {
+      "title": "Permit status filter",
+      "type": "string",
+      "description": "Return all permits, or only currently-active licenses.",
+      "editor": "select",
+      "enum": [
+        "all",
+        "active"
+      ],
+      "enumTitles": [
+        "All permits",
+        "Active only"
+      ],
+      "default": "all",
+      "prefill": "active"
+    },
+    "maxRecordsPerCity": {
+      "title": "Max records per city",
+      "type": "integer",
+      "description": "Cap records per city (leave empty for the full registry).",
+      "minimum": 1,
+      "nullable": true,
+      "default": 50,
+      "prefill": 25
+    },
+    "resolveJurisdiction": {
+      "title": "Resolve governing jurisdiction",
+      "type": "boolean",
+      "description": "Use coordinates and Census boundaries to distinguish an incorporated city from an unincorporated county area. Disable for a faster raw-source pull.",
+      "default": true
+    },
+    "snapshot": {
+      "title": "Monitor changes from a complete pull",
+      "type": "boolean",
+      "description": "Persist a query-scoped baseline and compare it with the prior complete run. Requires maxRecordsPerCity to be cleared; capped results are rejected so they cannot create false disappearance alerts.",
+      "default": false
+    }
+  }
+}
