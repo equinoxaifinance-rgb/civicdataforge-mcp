@@ -4,10 +4,15 @@
 [![CivicDataForge MCP quality score](https://glama.ai/mcp/servers/equinoxaifinance-rgb/civicdataforge-mcp/badges/score.svg)](https://glama.ai/mcp/servers/equinoxaifinance-rgb/civicdataforge-mcp)
 
 CivicDataForge gives MCP-compatible agents structured access to official government records through the
-Apify MCP gateway. The current bundle focuses on short-term-rental permits, federal healthcare exclusions,
-childcare licensing and compliance, and NYC film permits.
+Apify MCP gateway. The official bundle exposes seven focused tools across property compliance, healthcare
+integrity, and regulated-facility safety. Additional research products remain discoverable in the public
+catalog without bloating the default MCP tool set.
 
 Website: <https://civicdataforge.pages.dev>
+
+Government data catalog: <https://civicdataforge.pages.dev/government-data-api>
+
+Machine-readable catalog: <https://civicdataforge.pages.dev/api-catalog.json>
 
 Apify Store: <https://apify.com/civicdataforge>
 
@@ -20,7 +25,7 @@ Dated product proof: <https://civicdataforge.pages.dev/proof>
 Use this Streamable HTTP endpoint:
 
 ```text
-https://mcp.apify.com/?tools=civicdataforge/leie-exclusion-screening,civicdataforge/str-permit-registry,civicdataforge/texas-childcare-licensing,civicdataforge/nyc-film-permits
+https://mcp.apify.com/?tools=civicdataforge/str-permit-registry,civicdataforge/fl-dbpr-vacation-rentals,civicdataforge/property-violations,civicdataforge/leie-exclusion-screening,civicdataforge/restaurant-inspection-scores,civicdataforge/multistate-childcare-licensing,civicdataforge/texas-childcare-licensing
 ```
 
 Send your Apify API token in the `Authorization` header:
@@ -37,9 +42,16 @@ usage limits on its Store page.
 | Tool | What it returns | Typical workflow |
 |---|---|---|
 | `str-permit-registry` | Official STR permit/license status, address, dates, source links, and normalized jurisdiction fields across 29 supported US jurisdictions | Property compliance, registry monitoring, and municipal research |
+| `fl-dbpr-vacation-rentals` | Florida DBPR lodging-license records across seven official district files | State-license validation and property diligence |
+| `property-violations` | Normalized code and building-violation records from supported municipal sources | Property compliance research and monitoring |
 | `leie-exclusion-screening` | HHS-OIG LEIE records filtered by name, NPI, state, specialty, or exclusion type | Healthcare compliance and credentialing support |
+| `restaurant-inspection-scores` | Official restaurant inspection and violation records across seven supported jurisdictions | Facility safety research and monitoring |
+| `multistate-childcare-licensing` | Supported state childcare licensing, inspection, and deficiency fields | Multi-state facility research |
 | `texas-childcare-licensing` | Licensed childcare operations with inspection and deficiency fields where the state publishes them | Facility research and compliance support |
-| `nyc-film-permits` | NYC film and television permit locations, dates, boroughs, categories, and precincts | Location research and production planning |
+
+The official bundle is intentionally limited to the seven flagship tools. India company-registry and NYC
+film-permit products remain available through their Actor pages and focused suite-specific MCP URLs in the
+public catalog.
 
 ## Fastest proof path
 
