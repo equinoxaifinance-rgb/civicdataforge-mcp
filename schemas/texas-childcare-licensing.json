@@ -1,0 +1,38 @@
+{
+  "title": "Texas Childcare Licensing input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "county": {
+      "title": "County",
+      "type": "string",
+      "description": "Filter to one Texas county (e.g. HARRIS, DALLAS, TRAVIS). Leave empty for statewide.",
+      "editor": "textfield",
+      "nullable": true,
+      "prefill": "Travis"
+    },
+    "operationType": {
+      "title": "Operation type",
+      "type": "string",
+      "description": "e.g. 'Licensed Center', 'Licensed Child-Care Home', 'Listed Family Home'. Leave empty for all.",
+      "editor": "textfield",
+      "nullable": true
+    },
+    "minHighDeficiencies": {
+      "title": "Min high-severity deficiencies",
+      "type": "integer",
+      "description": "Only return operations with at least this many high-severity deficiencies (compliance screening).",
+      "minimum": 0,
+      "nullable": true
+    },
+    "maxRecords": {
+      "title": "Max records",
+      "type": "integer",
+      "description": "Cap total records (leave empty for the full registry, ~100k).",
+      "minimum": 1,
+      "nullable": true,
+      "default": 100,
+      "prefill": 25
+    }
+  }
+}
