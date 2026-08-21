@@ -1,5 +1,8 @@
 # CivicDataForge — Official Public-Records Data for AI Agents
 
+[![CivicDataForge MCP server](https://glama.ai/mcp/servers/equinoxaifinance-rgb/civicdataforge-mcp/badges/card.svg)](https://glama.ai/mcp/servers/equinoxaifinance-rgb/civicdataforge-mcp)
+[![CivicDataForge MCP quality score](https://glama.ai/mcp/servers/equinoxaifinance-rgb/civicdataforge-mcp/badges/score.svg)](https://glama.ai/mcp/servers/equinoxaifinance-rgb/civicdataforge-mcp)
+
 CivicDataForge gives MCP-compatible agents structured access to official government records through the
 Apify MCP gateway. The current bundle focuses on short-term-rental permits, federal healthcare exclusions,
 childcare licensing and compliance, and NYC film permits.
@@ -9,6 +12,8 @@ Website: <https://civicdataforge.pages.dev>
 Apify Store: <https://apify.com/civicdataforge>
 
 Live STR proof: <https://apify.com/civicdataforge/str-permit-registry/examples/check-orlando-str-permits>
+
+Dated product proof: <https://civicdataforge.pages.dev/proof>
 
 ## Add the remote MCP server
 
@@ -57,5 +62,5 @@ official source links and review the source-specific limitations documented by e
 ## Repository scope and license
 
 This repository publishes discovery and connection metadata for the hosted remote MCP endpoint; the data
-Actors run on Apify. Repository metadata and documentation are MIT-licensed. Government-source terms and
+Actors run on Apify. Repository metadata and documentation are licensed under the included [MIT License](LICENSE). Government-source terms and
 record-level use restrictions remain source-specific and are documented on the corresponding Actor pages.
