@@ -76,6 +76,44 @@ Do not use this package name as a live install instruction until the npm registr
 version. The GitHub source checkout and hosted Apify MCP endpoint remain the current working paths before
 that release receipt exists.
 
+## 简体中文：接入与使用边界
+
+CivicDataForge 为支持 MCP 的智能体提供结构化政府公开记录。默认网关包含七个聚焦工具，覆盖
+房产合规、医疗排除名单与受监管设施安全。每条结果都应保留官方来源链接、覆盖范围与对应
+Actor 的数据限制；这些数据用于研究和合规辅助，不替代主管机关的最终认定。
+
+当前可用的远程 Streamable HTTP 接入地址为：
+
+```text
+https://mcp.apify.com/?tools=civicdataforge/str-permit-registry,civicdataforge/fl-dbpr-vacation-rentals,civicdataforge/property-violations,civicdataforge/leie-exclusion-screening,civicdataforge/restaurant-inspection-scores,civicdataforge/multistate-childcare-licensing,civicdataforge/texas-childcare-licensing
+```
+
+调用方需要自己的 Apify 账户与 API Token，并通过 `Authorization: Bearer YOUR_APIFY_TOKEN`
+传递。CivicDataForge 不在仓库、npm 包或返回结果中嵌入发布者 Token。
+
+npm 包正式发布并经注册表回读验证后，ModelScope 与本地 MCP 客户端可使用以下 STDIO 配置：
+
+```json
+{
+  "mcpServers": {
+    "civicdataforge": {
+      "command": "npx",
+      "args": ["-y", "civicdataforge-mcp-gateway@latest"],
+      "env": {
+        "APIFY_TOKEN": "YOUR_APIFY_TOKEN"
+      }
+    }
+  }
+}
+```
+
+在 npm 注册表返回已发布版本之前，请勿把上述包名当作当前可用的安装路径；目前可用路径是
+本仓库源码或上方 Apify 托管网关。七个默认工具分别用于短租许可、佛罗里达州住宿执照、
+房产违规、HHS-OIG LEIE 医疗排除名单、餐厅检查、多州托育许可与德州托育许可查询。
+
+这些工具不是消费者报告，不得作为信贷、保险、就业、住房或其他资格决定的唯一依据。
+使用者应核对原始政府记录，并遵守每个数据源的适用条款和限制。
+
 ## Current tools
 
 | Tool | What it returns | Typical workflow |
