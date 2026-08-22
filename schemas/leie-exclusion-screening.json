@@ -1,0 +1,125 @@
+{
+  "title": "Healthcare exclusion screening input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "mode": {
+      "title": "Mode",
+      "type": "string",
+      "description": "screen checks people/entities and returns evidence records; filter pulls source LEIE records with provenance.",
+      "editor": "select",
+      "enum": [
+        "screen",
+        "filter"
+      ],
+      "enumTitles": [
+        "Screen a list",
+        "Filter the LEIE list"
+      ],
+      "default": "screen",
+      "prefill": "filter"
+    },
+    "screenList": {
+      "title": "People / entities to screen",
+      "type": "array",
+      "description": "For screen mode. Each item: { \"name\": \"JOHN SMITH\" or \"ACME HOME HEALTH\", \"npi\": \"1234567893\" (optional valid test NPI), \"state\": \"NC\" (optional), \"ref\": \"your-id\" (optional) }. Name-only matches are normalized exact-name candidates, constrained by state when supplied, and require human review.",
+      "editor": "json",
+      "default": [],
+      "maxItems": 500,
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "title": "Name",
+            "type": "string",
+            "minLength": 1,
+            "description": "Person or entity name. Required when NPI is omitted."
+          },
+          "npi": {
+            "title": "NPI",
+            "type": "string",
+            "pattern": "^[0-9]{10}$",
+            "description": "Optional 10-digit NPI. The Actor also validates the NPI check digit and rejects invalid values."
+          },
+          "state": {
+            "title": "State",
+            "type": "string",
+            "pattern": "^[A-Za-z]{2}$",
+            "description": "Optional two-letter state used to constrain name candidates."
+          },
+          "ref": {
+            "title": "Caller reference",
+            "type": "string",
+            "description": "Optional caller reference returned with the evidence record."
+          }
+        }
+      }
+    },
+    "enrichNpi": {
+      "title": "Resolve identity with CMS NPPES",
+      "type": "boolean",
+      "description": "Look up matched LEIE NPIs or a caller-supplied NPI in the official CMS registry and return explainable correlation signals. NPI status is not licensure or eligibility.",
+      "default": true
+    },
+    "maxNpiLookups": {
+      "title": "Maximum CMS NPI lookups",
+      "type": "integer",
+      "description": "Caps NPPES calls per run. Remaining rows still receive LEIE results and show that enrichment was skipped.",
+      "minimum": 0,
+      "maximum": 25,
+      "default": 10
+    },
+    "includeSam": {
+      "title": "Also check SAM.gov active exclusions",
+      "type": "boolean",
+      "description": "Opt in to the official GSA SAM.gov Exclusions API. Requires your own public SAM.gov API key.",
+      "default": false
+    },
+    "samApiKey": {
+      "title": "SAM.gov API key",
+      "type": "string",
+      "description": "Caller-supplied SAM.gov public API key. Required only when includeSam is enabled; never returned in output.",
+      "editor": "textfield",
+      "isSecret": true
+    },
+    "maxSamQueries": {
+      "title": "Maximum SAM.gov queries",
+      "type": "integer",
+      "description": "Caps SAM.gov calls per run to respect the official API's role-dependent rate limits.",
+      "minimum": 0,
+      "maximum": 10,
+      "default": 10
+    },
+    "state": {
+      "title": "State (filter mode)",
+      "type": "string",
+      "description": "Two-letter state code, for example TX.",
+      "editor": "textfield",
+      "nullable": true,
+      "prefill": "FL"
+    },
+    "specialty": {
+      "title": "Specialty (filter mode)",
+      "type": "string",
+      "description": "Substring match on specialty, such as NURSING, PHARMACY, or HOME HEALTH.",
+      "editor": "textfield",
+      "nullable": true
+    },
+    "exclusionType": {
+      "title": "Exclusion type (filter mode)",
+      "type": "string",
+      "description": "OIG exclusion authority code, such as 1128a1 or 1128b5.",
+      "editor": "textfield",
+      "nullable": true
+    },
+    "maxRecords": {
+      "title": "Max records (filter mode)",
+      "type": "integer",
+      "description": "Caps LEIE records returned in filter mode.",
+      "minimum": 1,
+      "nullable": true,
+      "default": 100,
+      "prefill": 50
+    }
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "title": "Florida DBPR Vacation Rentals input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "county": {
+      "title": "County",
+      "type": "string",
+      "description": "Filter to one Florida county by property location (e.g. Orange, Osceola, Dade, Monroe, St. Johns). Leave empty for statewide.",
+      "editor": "textfield",
+      "prefill": "Orange",
+      "nullable": true
+    },
+    "city": {
+      "title": "City",
+      "type": "string",
+      "description": "Filter by property location city (e.g. Kissimmee, Orlando, Destin). Leave empty for all.",
+      "editor": "textfield",
+      "nullable": true
+    },
+    "status": {
+      "title": "License status",
+      "type": "string",
+      "description": "Current = up to date with DBPR; Delinquent = license not renewed on time (expiry date has passed).",
+      "editor": "select",
+      "enum": [
+        "all",
+        "current",
+        "delinquent"
+      ],
+      "enumTitles": [
+        "All licenses",
+        "Current only",
+        "Delinquent only"
+      ],
+      "default": "all",
+      "prefill": "current"
+    },
+    "licenseType": {
+      "title": "License type",
+      "type": "string",
+      "description": "DBPR licenses vacation rentals as Condos (type 2006) or Dwellings (type 2007, incl. single-family homes & townhouses).",
+      "editor": "select",
+      "enum": [
+        "all",
+        "condo",
+        "dwelling"
+      ],
+      "enumTitles": [
+        "Both types",
+        "Vacation Rental — Condo",
+        "Vacation Rental — Dwelling"
+      ],
+      "default": "all"
+    },
+    "nameContains": {
+      "title": "Name contains",
+      "type": "string",
+      "description": "Case-insensitive substring match on the business name or licensee name.",
+      "editor": "textfield",
+      "nullable": true
+    },
+    "maxRecords": {
+      "title": "Max records",
+      "type": "integer",
+      "description": "Cap total records returned (statewide is ~174k).",
+      "minimum": 1,
+      "default": 100,
+      "prefill": 25
+    },
+    "proxyConfiguration": {
+      "title": "Proxy",
+      "type": "object",
+      "description": "The state site blocks plain datacenter traffic; Apify Proxy is used by default. Switch to residential if datacenter IPs get blocked.",
+      "editor": "proxy",
+      "default": {
+        "useApifyProxy": true
+      },
+      "prefill": {
+        "useApifyProxy": true
+      }
+    }
+  }
+}

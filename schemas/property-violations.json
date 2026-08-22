@@ -1,0 +1,59 @@
+{
+  "title": "Property Violations Registry input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "cities": {
+      "title": "Cities",
+      "type": "array",
+      "description": "Which city building code-enforcement / property-violation registries to pull.",
+      "editor": "select",
+      "items": {
+        "type": "string",
+        "enum": [
+          "chicago",
+          "nyc",
+          "san_francisco",
+          "austin"
+        ],
+        "enumTitles": [
+          "Chicago, IL",
+          "New York City, NY",
+          "San Francisco, CA",
+          "Austin, TX"
+        ]
+      },
+      "default": [
+        "austin"
+      ],
+      "prefill": [
+        "austin"
+      ]
+    },
+    "status": {
+      "title": "Violation status filter",
+      "type": "string",
+      "description": "Return all violations, or only currently OPEN/active ones (the distress signal buyers usually want).",
+      "editor": "select",
+      "enum": [
+        "all",
+        "open"
+      ],
+      "enumTitles": [
+        "All violations",
+        "Open / active only"
+      ],
+      "default": "all",
+      "prefill": "open"
+    },
+    "maxRecordsPerCity": {
+      "title": "Max records per city",
+      "type": "integer",
+      "description": "Cap records per city, newest first (leave empty to pull the full registry).",
+      "minimum": 1,
+      "nullable": true,
+      "default": 100,
+      "prefill": 25
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "name": "civicdataforge-mcp-gateway",
+  "version": "1.1.0",
+  "private": false,
+  "type": "module",
+  "description": "Installable stdio MCP gateway for the seven CivicDataForge government-record Actors.",
+  "engines": {
+    "node": ">=22"
+  },
+  "bin": {
+    "civicdataforge-mcp": "server.mjs"
+  },
+  "files": [
+    "server.mjs",
+    "server.json",
+    "glama.json",
+    "schemas/",
+    "README.md",
+    "LICENSE"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "start": "node server.mjs",
+    "test": "node --test test/*.test.mjs"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "1.29.0",
+    "apify-client": "2.22.1"
+  }
+}
