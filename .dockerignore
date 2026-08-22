@@ -1,0 +1,7 @@
+.git
+.github
+.codex-run
+node_modules
+test
+npm-debug.log*
+*.tgz

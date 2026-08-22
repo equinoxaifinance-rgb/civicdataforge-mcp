@@ -1,0 +1,66 @@
+{
+  "title": "Multi-State Childcare Licensing input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "states": {
+      "title": "States",
+      "type": "array",
+      "description": "Which states to pull. Available: NY (16.8k facilities), NJ (4.2k), CO (4.5k), CT (16.2k + inspections), DE (1.2k + inspections & deficiencies). Leave empty for all five.",
+      "editor": "stringList",
+      "prefill": [
+        "CT"
+      ],
+      "nullable": true,
+      "default": [
+        "CT"
+      ]
+    },
+    "county": {
+      "title": "County",
+      "type": "string",
+      "description": "Filter to one county (e.g. 'Sussex', 'Oneida', 'Boulder'). Applied server-side where the state feed carries a county column; CT publishes no county so a county filter returns no CT rows. Leave empty for statewide.",
+      "editor": "textfield",
+      "nullable": true
+    },
+    "licenseStatus": {
+      "title": "License status",
+      "type": "string",
+      "description": "Case-insensitive substring match on the facility's license status (e.g. 'ACTIVE', 'License', 'Licensed'). Leave empty for all statuses.",
+      "editor": "textfield",
+      "nullable": true
+    },
+    "includeInspections": {
+      "title": "Include inspection / deficiency data",
+      "type": "boolean",
+      "description": "When on, fetch each state's inspection/deficiency feed and merge per-facility inspection_count and (DE) deficiency_count + top cited regulations. Turn off for a faster, licensing-only pull. Only affects CT and DE.",
+      "default": false,
+      "prefill": false
+    },
+    "minDeficiencies": {
+      "title": "Min cited deficiencies",
+      "type": "integer",
+      "description": "Only return facilities with at least this many cited deficiencies (compliance screening). Deficiency counts are published only by Delaware; other states have none, so this filter excludes them.",
+      "minimum": 0,
+      "nullable": true
+    },
+    "maxRecordsPerState": {
+      "title": "Max records per state",
+      "type": "integer",
+      "description": "Cap the number of facility records pulled from each state (leave empty for the full registry).",
+      "minimum": 1,
+      "nullable": true,
+      "default": 50,
+      "prefill": 25
+    },
+    "maxInspectionRows": {
+      "title": "Max inspection rows per state",
+      "type": "integer",
+      "description": "Cap the inspection/deficiency rows fetched per state before building the per-facility compliance lookup (leave empty to read the full feed; CT ships ~97k inspection rows).",
+      "minimum": 1,
+      "nullable": true,
+      "default": 200,
+      "prefill": 50
+    }
+  }
+}
