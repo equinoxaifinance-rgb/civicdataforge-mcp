@@ -1,41 +1,47 @@
 # CivicDataForge MCP Gateway 1.1.0 — Release Verification
 
-Verified on 2026-08-22 for the strengthened 1.1.0 release branch.
+Verified on 2026-08-22 against the public default branch, the release branch,
+the exact npm archive, and Glama's customer-visible release.
 
 ## Shipped artifact
 
 - File: `civicdataforge-mcp-gateway-1.1.0.tgz`
-- SHA-256: `B32D89B02BE27659A485CBE9FB19090327570D1C8E91B6A3050C84192F01B342`
-- npm contents: 13 intended files, 10.2 kB packed, 34.8 kB unpacked
-- The packed `package.json`, server, metadata, README, license, and all seven schemas are byte-identical to the release source.
-- Strong credential scan found no tokens, cloud keys, GitHub tokens, or private keys. The broader assignment scan found only the documented `YOUR_APIFY_TOKEN` placeholder, `process.env.APIFY_TOKEN`, and the client-factory parameter.
+- SHA-256: `AB9A00BA6210EDDBDD577ADCF631F48427AED5AE77F062EE1B57F54224EB7A12`
+- npm shasum: `f56ce3b168e8638f8695f927b78db0e5dda0635a`
+- npm integrity: `sha512-XzLFqcZ2jQGZF4moxj3fCIMvBllqOq1sCD3WKYpzg3aP/v9R/ryDJdCioSs+1Mhhn5Q1DzNqebEGnFkaZO4A4A==`
+- Contents: 13 intended files, 11,619 bytes packed, 36,985 bytes unpacked.
+- The archive contains the package manifest, executable server, discovery metadata, bilingual README, MIT license, and all seven schemas.
+- Strong credential scanning found no token, cloud key, GitHub token, or private key. Matches were limited to documented placeholders and the expected environment-variable boundary.
 
 ## Runtime receipts
 
-- Fresh source install: 152 packages audited, zero vulnerabilities.
-- Source suite: 4 passed, 0 failed.
-- Fresh install of the exact tarball outside the source tree: initialized successfully, returned exactly seven tools, and returned `APIFY_TOKEN_REQUIRED` for a credential-free call.
-- Installed npm binary (`node_modules/.bin/civicdataforge-mcp.cmd`): initialized successfully, returned exactly seven tools, and preserved the credential boundary.
+- Source suite: 5 passed, 0 failed, including a bilingual discovery/readiness contract.
+- Clean install of the exact archive: initialized successfully and returned exactly seven tools.
+- Credential-free call: returned the expected `APIFY_TOKEN_REQUIRED` refusal.
+- Installed command shim: present.
 - Mocked authenticated dispatch: called the bound Actor and returned a dataset row through the normal response path.
-- Official MCP `server.json` schema: valid against `https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json`.
-- Official `mcp-publisher` v1.7.9 validation: `server.json is valid` against `https://registry.modelcontextprotocol.io`; the Windows publisher binary matched release SHA-256 `aa7c3e014a38b427171b5c6d2c034551daa6fd822ce4a00d1dee2dbf7a21c118`.
-- Glama metadata: valid against `https://glama.ai/mcp/schemas/server.json`.
+- Official MCP `server.json`: accepted by `mcp-publisher` v1.7.9; the public registry reports `io.github.equinoxaifinance-rgb/civicdataforge` 1.1.0 active/latest.
+- Glama metadata: valid against Glama's server schema.
+
+## Public readbacks
+
+- GitHub `main` and `codex/mcp-gateway-1.1.0` resolved to the same reviewed release commit before this receipt-only correction.
+- The raw public README matched the reviewed local README after line-ending normalization at SHA-256 `0B1C67737BBF99D83A428C61C0323919435BB63DF0E333D211938A9F1E4EFE9F`.
+- Glama published release 1.1.1/latest from the repository, exposed all seven schemas, verified the author and MIT license, and graded Server Coherence, Tool Definition Quality, and Maintenance as A. Its seven tool definitions average 4.6/5.
+- The Simplified Chinese section exposes the working hosted endpoint, the future npm/ModelScope configuration, all seven tool purposes, caller-owned token requirements, the npm prepublication boundary, and the same responsible-use limits as English.
 
 ## Reproducible Glama container
 
-- Maintainer-authored `Dockerfile` builds successfully from the repository.
+- Maintainer-authored `Dockerfile` builds from the repository.
 - Image: `civicdataforge-mcp:1.1.0`
 - Image ID: `sha256:5d245ef0af4f9c4d81033799c0e6a27f407fc11d3ab37a2302983a7da2faac82`
 - Runtime user: `node` (`uid=1000`), working directory `/app`, command `node server.mjs`.
-- Network-disabled container test: initialized successfully, returned exactly seven tools, and returned `APIFY_TOKEN_REQUIRED` without attempting an external call.
-- The image contains only the two declared production dependencies and no self-reference.
-
-Glama's current indexing methodology says discoverability depends on a reproducible container build and protocol introspection. The checked-in Dockerfile removes the prior inferred-build dependency: <https://glama.ai/mcp/methodology>.
+- A network-disabled container initialized, returned seven tools, and preserved the `APIFY_TOKEN_REQUIRED` boundary without attempting an external call.
 
 ## Publication boundaries
 
-- npm publication is not complete: the package name returned HTTP 404 and this machine has no authenticated npm session.
-- The official MCP Registry already reports `io.github.equinoxaifinance-rgb/civicdataforge` version 1.1.0 as active and latest; GitHub Actions run `32470428723` completed successfully for default-branch commit `9e44a5d`.
-- The stronger Docker, npm-bin, and tool-definition layers are not on the GitHub default branch until the verified branch is pushed, fast-forwarded, and read back.
-- Glama quality rescoring is not complete until the published repository revision is built and introspected by Glama.
-- A real package-to-Apify call was not made because this shell has no caller-provided `APIFY_TOKEN`; the authenticated dispatch path is covered by the mocked Actor test, while the exact packaged and containerized credential-failure paths were executed directly.
+- npm publication is not complete: the package name returns HTTP 404 and no authenticated npm owner session is available on this machine.
+- ModelScope publication is not complete and must not advertise the `npx` package path until npm publication and clean registry readback exist.
+- The awesome-mcp-servers pull request is open and its Glama requirement is now present, but merge remains an external maintainer decision.
+- Glama's public UI is current; its separate directory API was stale at the last direct API readback.
+- A real package-to-Apify call still requires the caller's own `APIFY_TOKEN`; no publisher credential is embedded in the source or archive.
