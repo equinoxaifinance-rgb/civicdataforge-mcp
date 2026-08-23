@@ -2,11 +2,12 @@ import assert from "node:assert/strict";
 import test from "node:test";
 import { TOOL_DEFINITIONS, callActorTool } from "../server.mjs";
 
-test("publishes exactly the seven CivicDataForge tools with bounded schemas", () => {
-  assert.equal(TOOL_DEFINITIONS.length, 7);
+test("publishes exactly the nine CivicDataForge tools with bounded schemas", () => {
+  assert.equal(TOOL_DEFINITIONS.length, 9);
   assert.deepEqual(
     TOOL_DEFINITIONS.map((tool) => tool.name),
     [
+      "civicdataforge-evidence-gateway",
       "str-permit-registry",
       "fl-dbpr-vacation-rentals",
       "property-violations",
@@ -14,12 +15,14 @@ test("publishes exactly the seven CivicDataForge tools with bounded schemas", ()
       "restaurant-inspection-scores",
       "multistate-childcare-licensing",
       "texas-childcare-licensing",
+      "epa-echo-facility-compliance",
     ],
   );
   for (const tool of TOOL_DEFINITIONS) {
     assert.equal(tool.inputSchema.type, "object");
     assert.ok(Object.keys(tool.inputSchema.properties ?? {}).length > 0);
-    assert.notEqual(tool.title, tool.name);
+    assert.ok(tool.title && tool.title !== tool.name, `${tool.name} keeps a human-readable title`);
+    assert.ok(tool.description.length >= 100, `${tool.name} keeps a task-routing description`);
     assert.match(tool.description, /^Use /);
     assert.match(tool.description, /APIFY_TOKEN/);
     assert.match(tool.description, /consume Apify usage/);

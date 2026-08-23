@@ -1,0 +1,22 @@
+{
+  "title": "CivicDataForge evidence gateway input",
+  "description": "Route a U.S., India, global screening, EPA, or China-facing evidence task through one receipt-bound contract.",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "task": {
+      "title": "Evidence task",
+      "type": "string",
+      "enum": ["us_property_decision", "india_company_evidence", "india_supplier_pack", "restricted_party_screening", "epa_facility_evidence", "china_counterparty_intake"]
+    },
+    "subject": { "title": "Exact subject identifiers", "type": "object", "additionalProperties": true },
+    "evidence": { "title": "Rights-labeled customer or licensed evidence", "type": "array", "items": { "type": "object", "additionalProperties": true }, "default": [] },
+    "purpose": { "title": "Purpose", "type": "string" },
+    "retentionDays": { "title": "Packet retention days", "type": "integer", "minimum": 0, "maximum": 365, "default": 30 },
+    "previousReceiptHash": { "title": "Previous evidence-state receipt", "type": "string", "pattern": "^sha256:[a-f0-9]{64}$" },
+    "transactionGate": { "title": "Include caller-policy transaction state", "type": "boolean", "default": false },
+    "screenRestrictedParties": { "title": "Screen China-facing subject against the U.S. ITA CSL", "type": "boolean", "default": true },
+    "batchReference": { "title": "Customer batch reference", "type": "string", "maxLength": 120 }
+  },
+  "required": ["task", "subject"]
+}

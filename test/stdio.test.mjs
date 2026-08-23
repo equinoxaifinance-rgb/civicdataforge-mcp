@@ -15,7 +15,9 @@ test("real stdio initialize, tools/list, and credential failure path", async () 
   try {
     await client.connect(transport);
     const listed = await client.listTools();
-    assert.equal(listed.tools.length, 7);
+    assert.equal(listed.tools.length, 9);
+    assert.ok(listed.tools.some((tool) => tool.name === "civicdataforge-evidence-gateway"));
+    assert.ok(listed.tools.some((tool) => tool.name === "epa-echo-facility-compliance"));
     const called = await client.callTool({
       name: "str-permit-registry",
       arguments: { jurisdiction: "orlando" },
