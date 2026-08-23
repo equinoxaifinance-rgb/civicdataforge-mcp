@@ -20,7 +20,8 @@ test("package, server, source, and ten-tool remote metadata remain version-align
   assert.equal(server.version, pkg.version);
   assert.match(source, /name: "civicdataforge", version: "1\.3\.0"/);
   assert.match(pkg.description, /ten CivicDataForge/);
-  assert.match(server.description, /Ten evidence tools/);
+  assert.match(server.description, /Ten .*evidence tools/);
+  assert(server.description.length <= 100, "MCP Registry description must not exceed 100 characters");
   assert.equal(schemas.filter((name) => name.endsWith(".json")).length, 10);
 
   const remote = new URL(server.remotes[0].url);
