@@ -34,7 +34,17 @@
     "city": {"title": "City", "type": "string", "maxLength": 100},
     "state": {"title": "State", "type": "string", "pattern": "^[A-Za-z]{2}$"},
     "zip": {"title": "ZIP code", "type": "string", "pattern": "^[0-9]{5}(-[0-9]{4})?$"},
-    "maxCandidates": {"title": "Maximum candidates", "type": "integer", "minimum": 1, "maximum": 10, "default": 5},
-    "includeProgramDetails": {"title": "Retrieve program details", "type": "boolean", "default": true}
+    "maxCandidates": {
+      "title": "Maximum candidates",
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 10,
+      "default": 5
+    },
+    "includeProgramDetails": {
+      "title": "Retrieve program details",
+      "type": "boolean",
+      "default": true
+    }
   }
 }

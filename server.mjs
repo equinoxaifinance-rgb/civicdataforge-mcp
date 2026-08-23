@@ -73,6 +73,13 @@ const TOOL_SPECS = [
     schema: "epa-echo-facility-compliance.json",
     description: "Use for a bounded EPA ECHO facility query that preserves published identity, compliance, inspection, and enforcement evidence while keeping environmental safety UNKNOWN. Starts the bound Apify Actor with the caller's APIFY_TOKEN, may consume Apify usage, waits up to 60 seconds, and returns at most 1,000 source-linked rows without modifying government records.",
   },
+  {
+    name: "norway-company-evidence",
+    title: "Norway Company & Supplier Evidence",
+    actorId: "civicdataforge/norway-company-evidence",
+    schema: "norway-company-evidence.json",
+    description: "Use for exact nine-digit Norwegian organisation-number evidence or bounded company-name research from Brønnøysundregistrene. NLOD 2.0 permits commercial reuse with attribution and change disclosure, but buyer-specific privacy and lawful-basis review may still be required for personal-data-bearing records; this Actor omits roles, contacts, and street address lines and never issues a KYC, procurement, sanctions, or eligibility verdict. Starts the bound Apify Actor with the caller's APIFY_TOKEN, may consume Apify usage, waits up to 60 seconds, and returns at most 1,000 source-linked rows without modifying government records.",
+  },
 ];
 
 const byName = new Map(TOOL_SPECS.map((tool) => [tool.name, tool]));
@@ -154,7 +161,7 @@ export async function callActorTool(name, input, {
 
 export function createServer(options = {}) {
   const server = new Server(
-    { name: "civicdataforge", version: "1.2.0" },
+    { name: "civicdataforge", version: "1.3.0" },
     { capabilities: { tools: {} } },
   );
   server.setRequestHandler(ListToolsRequestSchema, async () => ({ tools: TOOL_DEFINITIONS }));

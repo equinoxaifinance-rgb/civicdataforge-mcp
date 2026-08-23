@@ -1,0 +1,46 @@
+{
+  "title": "Norway company evidence input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "queries": {
+      "title": "Company queries",
+      "type": "array",
+      "description": "One to 25 evidence queries. Prefer the exact nine-digit organisation number. A supplied name alongside an organisation number is returned as a consistency check, never as a replacement identifier.",
+      "editor": "json",
+      "minItems": 1,
+      "maxItems": 25,
+      "prefill": [{ "reference": "supplier-no-001", "organisationNumber": "974760673", "purpose": "SUPPLIER_ONBOARDING_EVIDENCE" }],
+      "items": {
+        "type": "object",
+        "properties": {
+          "reference": { "title": "Caller reference", "type": "string", "maxLength": 200, "description": "Optional non-sensitive caller reference bound into the evidence receipt." },
+          "organisationNumber": { "title": "Organisation number", "type": "string", "description": "Exact nine-digit Norwegian organisation number." },
+          "name": { "title": "Entity name", "type": "string", "minLength": 2, "maxLength": 180, "description": "Bounded official name search. The API's published candidates are returned; ambiguous candidates are not silently resolved." },
+          "purpose": {
+            "title": "Evidence purpose",
+            "type": "string",
+            "description": "Caller-declared workflow context recorded in the receipt; it never changes source facts or produces an eligibility verdict.",
+            "editor": "select",
+            "enum": ["ENTITY_VERIFICATION", "SUPPLIER_ONBOARDING_EVIDENCE", "PROCUREMENT_RESEARCH", "OTHER"],
+            "enumTitles": ["Entity verification", "Supplier onboarding evidence", "Procurement research", "Other evidence purpose"]
+          },
+          "previousDecisionReceiptHash": { "title": "Previous decision receipt", "type": "string", "description": "Optional prior SHA-256 decision receipt used only for deterministic change classification." },
+          "previousRecordReceipts": { "title": "Previous record receipts", "type": "array", "editor": "stringList", "maxItems": 50, "description": "Optional prior record receipt hashes used only for deterministic added, removed, or unchanged classification.", "items": { "type": "string" } }
+        },
+        "required": ["purpose"]
+      }
+    },
+    "maxRecords": {
+      "title": "Maximum returned name candidates",
+      "type": "integer",
+      "editor": "number",
+      "minimum": 1,
+      "maximum": 50,
+      "default": 10,
+      "description": "Name searches request one additional record internally so truncation is detected and disclosed."
+    },
+    "batchReference": { "title": "Batch reference", "type": "string", "editor": "textfield", "maxLength": 200, "description": "Optional non-sensitive batch reference bound into the shared batch receipt." }
+  },
+  "required": ["queries"]
+}
