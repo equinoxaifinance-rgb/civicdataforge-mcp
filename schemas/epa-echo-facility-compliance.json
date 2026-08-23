@@ -1,0 +1,40 @@
+{
+  "title": "EPA ECHO facility evidence input",
+  "description": "Provide a 12-digit EPA FRS Registry ID, or a bounded facility name/address query. Exact FRS ID is the strongest selector.",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "facilityId": {
+      "title": "EPA FRS Registry ID",
+      "type": "string",
+      "description": "Exact 12-digit Facility Registry Service ID, for example 110000367567.",
+      "pattern": "^[0-9]{12}$"
+    },
+    "facilityName": {
+      "title": "Facility name",
+      "type": "string",
+      "description": "Published facility name. Add location fields to reduce ambiguity.",
+      "minLength": 3,
+      "maxLength": 200
+    },
+    "nameMatchMode": {
+      "title": "Name matching",
+      "type": "string",
+      "description": "Exact is the responsible default. Contains is discovery-only and may require review.",
+      "enum": ["exact", "contains", "begins"],
+      "default": "exact"
+    },
+    "streetAddress": {
+      "title": "Street address",
+      "type": "string",
+      "description": "Full or partial published street address. Address-only searches also require city, state, or ZIP.",
+      "minLength": 5,
+      "maxLength": 200
+    },
+    "city": {"title": "City", "type": "string", "maxLength": 100},
+    "state": {"title": "State", "type": "string", "pattern": "^[A-Za-z]{2}$"},
+    "zip": {"title": "ZIP code", "type": "string", "pattern": "^[0-9]{5}(-[0-9]{4})?$"},
+    "maxCandidates": {"title": "Maximum candidates", "type": "integer", "minimum": 1, "maximum": 10, "default": 5},
+    "includeProgramDetails": {"title": "Retrieve program details", "type": "boolean", "default": true}
+  }
+}

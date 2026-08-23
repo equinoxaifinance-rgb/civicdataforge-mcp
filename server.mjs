@@ -11,11 +11,18 @@ import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js"
 
 const TOOL_SPECS = [
   {
+    name: "civicdataforge-evidence-gateway",
+    title: "CivicDataForge Evidence Gateway",
+    actorId: "civicdataforge/civicdataforge-evidence-gateway",
+    schema: "civicdataforge-evidence-gateway.json",
+    description: "Use for routing a supported U.S. property, India company or supplier, restricted-party, EPA facility, or rights-first China-facing intake task into one minimized, receipt-bound packet. Starts the bound Apify Actor with the caller's APIFY_TOKEN, may consume Apify usage, waits up to 60 seconds, and returns at most 1,000 source-linked rows without modifying government records.",
+  },
+  {
     name: "str-permit-registry",
     title: "US STR Permit Registry",
     actorId: "civicdataforge/str-permit-registry",
     schema: "str-permit-registry.json",
-    description: "Use for address, owner, permit-ID, or jurisdiction research across supported US short-term-rental permit sources. For Florida statewide DBPR lodging licenses, use fl-dbpr-vacation-rentals instead. Starts the bound Apify Actor with the caller's APIFY_TOKEN, may consume Apify usage, waits up to 60 seconds, and returns at most 1,000 source-linked rows without modifying government records.",
+    description: "Use for address, permit-ID, or jurisdiction research across 30 supported US short-term-rental permit sources. For Florida statewide DBPR lodging licenses, use fl-dbpr-vacation-rentals instead. Address mode preserves explicit evidence decisions, scope, and receipts. Starts the bound Apify Actor with the caller's APIFY_TOKEN, may consume Apify usage, waits up to 60 seconds, and returns at most 1,000 source-linked rows without modifying government records.",
   },
   {
     name: "fl-dbpr-vacation-rentals",
@@ -58,6 +65,13 @@ const TOOL_SPECS = [
     actorId: "civicdataforge/texas-childcare-licensing",
     schema: "texas-childcare-licensing.json",
     description: "Use for Texas-only childcare operation, inspection, and deficiency evidence. For comparable research spanning multiple supported states, use multistate-childcare-licensing instead. Starts the bound Apify Actor with the caller's APIFY_TOKEN, may consume Apify usage, waits up to 60 seconds, and returns at most 1,000 source-linked rows without modifying government records.",
+  },
+  {
+    name: "epa-echo-facility-compliance",
+    title: "EPA ECHO Facility Compliance Evidence",
+    actorId: "civicdataforge/epa-echo-facility-compliance",
+    schema: "epa-echo-facility-compliance.json",
+    description: "Use for a bounded EPA ECHO facility query that preserves published identity, compliance, inspection, and enforcement evidence while keeping environmental safety UNKNOWN. Starts the bound Apify Actor with the caller's APIFY_TOKEN, may consume Apify usage, waits up to 60 seconds, and returns at most 1,000 source-linked rows without modifying government records.",
   },
 ];
 
@@ -140,7 +154,7 @@ export async function callActorTool(name, input, {
 
 export function createServer(options = {}) {
   const server = new Server(
-    { name: "civicdataforge", version: "1.1.0" },
+    { name: "civicdataforge", version: "1.2.0" },
     { capabilities: { tools: {} } },
   );
   server.setRequestHandler(ListToolsRequestSchema, async () => ({ tools: TOOL_DEFINITIONS }));

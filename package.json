@@ -1,9 +1,9 @@
 {
   "name": "civicdataforge-mcp-gateway",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "private": false,
   "type": "module",
-  "description": "Installable stdio MCP gateway for the seven CivicDataForge government-record Actors.",
+  "description": "Installable stdio MCP gateway for nine CivicDataForge government-record Actors.",
   "engines": {
     "node": ">=22"
   },
