@@ -13,6 +13,14 @@ test("publishes an honest bilingual ModelScope discovery path", async () => {
   assert.match(readme, /APIFY_TOKEN/);
   assert.match(readme, /在 npm 注册表返回已发布版本之前/);
   assert.match(readme, /不得作为信贷、保险、就业、住房或其他资格决定的唯一依据/);
+  assert.match(readme, /norway-company-evidence/);
+  assert.match(readme, /NLOD permits commercial/);
+  assert.match(readme, /buyer-specific privacy and legal-basis review/);
+  assert.match(readme, /public Actor `L9veafufAtLFNgiWP`/);
+  assert.match(readme, /build `mnKblLCjPc0BdqrME`, version `0\.1\.3`/);
+  assert.match(readme, /owned canary run `6xyIIolQYf3d1u0KR`/);
+  assert.match(readme, /deployment verification, not external customer usage/);
+  assert.match(readme, /logged-out API routes returned HTTP 403/);
   assert.equal(
     (readme.match(/civicdataforge\/str-permit-registry/g) ?? []).length >= 2,
     true,
