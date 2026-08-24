@@ -3,8 +3,8 @@
 [![CivicDataForge MCP server](https://glama.ai/mcp/servers/equinoxaifinance-rgb/civicdataforge-mcp/badges/card.svg)](https://glama.ai/mcp/servers/equinoxaifinance-rgb/civicdataforge-mcp)
 [![CivicDataForge MCP quality score](https://glama.ai/mcp/servers/equinoxaifinance-rgb/civicdataforge-mcp/badges/score.svg)](https://glama.ai/mcp/servers/equinoxaifinance-rgb/civicdataforge-mcp)
 
-CivicDataForge gives MCP-compatible agents structured access to official government records through the
-Apify MCP gateway. The official bundle exposes ten focused tools across unified evidence routing, property compliance, healthcare
+CivicDataForge gives MCP-compatible agents structured access to official government records through a stable
+credential-safe MCP relay backed by Apify. The official bundle exposes ten focused tools across unified evidence routing, property compliance, healthcare
 integrity, regulated-facility safety, and Norwegian company evidence. Additional research products remain discoverable in the public
 catalog without bloating the default MCP tool set.
 
@@ -25,13 +25,13 @@ Dated product proof: <https://civicdataforge.pages.dev/proof>
 Use this Streamable HTTP endpoint:
 
 ```text
-https://mcp.apify.com/?tools=civicdataforge/civicdataforge-evidence-gateway,civicdataforge/str-permit-registry,civicdataforge/fl-dbpr-vacation-rentals,civicdataforge/property-violations,civicdataforge/leie-exclusion-screening,civicdataforge/restaurant-inspection-scores,civicdataforge/multistate-childcare-licensing,civicdataforge/texas-childcare-licensing,civicdataforge/epa-echo-facility-compliance,civicdataforge/norway-company-evidence
+https://civicdataforge.pages.dev/mcp
 ```
 
-Send your Apify API token in the `Authorization` header:
+Public `initialize` and `tools/list` discovery work without a credential. For tool calls, send your raw Apify API token in the `X-Apify-Token` header:
 
 ```text
-Authorization: Bearer YOUR_APIFY_TOKEN
+X-Apify-Token: YOUR_APIFY_TOKEN
 ```
 
 An Apify account and API token are required. Each Actor has its own pricing, input schema, source notes, and
@@ -85,11 +85,11 @@ Actor 的数据限制；这些数据用于研究和合规辅助，不替代主�
 当前可用的远程 Streamable HTTP 接入地址为：
 
 ```text
-https://mcp.apify.com/?tools=civicdataforge/civicdataforge-evidence-gateway,civicdataforge/str-permit-registry,civicdataforge/fl-dbpr-vacation-rentals,civicdataforge/property-violations,civicdataforge/leie-exclusion-screening,civicdataforge/restaurant-inspection-scores,civicdataforge/multistate-childcare-licensing,civicdataforge/texas-childcare-licensing,civicdataforge/epa-echo-facility-compliance,civicdataforge/norway-company-evidence
+https://civicdataforge.pages.dev/mcp
 ```
 
-调用方需要自己的 Apify 账户与 API Token，并通过 `Authorization: Bearer YOUR_APIFY_TOKEN`
-传递。CivicDataForge 不在仓库、npm 包或返回结果中嵌入发布者 Token。
+公开的 `initialize` 与 `tools/list` 无需凭证。执行工具时，调用方需要自己的 Apify 账户与 API Token，并通过
+`X-Apify-Token: YOUR_APIFY_TOKEN` 传递。CivicDataForge 不在仓库、npm 包或返回结果中嵌入发布者 Token。
 
 简体中文完整接入手册提供两个从单一标识符到证据凭证的可复制路径：一个已支持美国辖区的
 物业地址，以及一个印度公司 CIN。手册明确列出同步 REST 端点、输入、来源字段、新鲜度字段、
