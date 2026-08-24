@@ -161,7 +161,7 @@ export async function callActorTool(name, input, {
 
 export function createServer(options = {}) {
   const server = new Server(
-    { name: "civicdataforge", version: "1.3.0" },
+    { name: "civicdataforge", version: "1.4.0" },
     { capabilities: { tools: {} } },
   );
   server.setRequestHandler(ListToolsRequestSchema, async () => ({ tools: TOOL_DEFINITIONS }));
