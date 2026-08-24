@@ -2,6 +2,7 @@
 
 [![CivicDataForge MCP server](https://glama.ai/mcp/servers/equinoxaifinance-rgb/civicdataforge-mcp/badges/card.svg)](https://glama.ai/mcp/servers/equinoxaifinance-rgb/civicdataforge-mcp)
 [![CivicDataForge MCP quality score](https://glama.ai/mcp/servers/equinoxaifinance-rgb/civicdataforge-mcp/badges/score.svg)](https://glama.ai/mcp/servers/equinoxaifinance-rgb/civicdataforge-mcp)
+[![AllMCPs Verified](https://allmcps.com/api/badge/civicdataforge-government-evidence)](https://allmcps.com/mcp/civicdataforge-government-evidence?verify=6641b3ab-b25c-4414-a18a-8dfc47acf45e)
 
 CivicDataForge gives MCP-compatible agents structured access to official government records through a stable
 credential-safe MCP relay backed by Apify. The official bundle exposes ten focused tools across unified evidence routing, property compliance, healthcare
