@@ -14,11 +14,11 @@ test("package, server, source, and ten-tool remote metadata remain version-align
     readFile(new URL("../server.mjs", import.meta.url), "utf8"),
     readdir(new URL("../schemas/", import.meta.url)),
   ]);
-  assert.equal(pkg.version, "1.4.0");
+  assert.equal(pkg.version, "1.4.1");
   assert.equal(lock.version, pkg.version);
   assert.equal(lock.packages[""].version, pkg.version);
   assert.equal(server.version, pkg.version);
-  assert.match(source, /name: "civicdataforge", version: "1\.4\.0"/);
+  assert.match(source, /name: "civicdataforge", version: "1\.4\.1"/);
   assert.match(pkg.description, /ten CivicDataForge/);
   assert.match(server.description, /Ten .*evidence tools/);
   assert(server.description.length <= 100, "MCP Registry description must not exceed 100 characters");

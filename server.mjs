@@ -22,7 +22,7 @@ const TOOL_SPECS = [
     title: "US STR Permit Registry",
     actorId: "civicdataforge/str-permit-registry",
     schema: "str-permit-registry.json",
-    description: "Use for address, permit-ID, or jurisdiction research across 30 supported US short-term-rental permit sources. For Florida statewide DBPR lodging licenses, use fl-dbpr-vacation-rentals instead. Address mode preserves explicit evidence decisions, scope, and receipts. Starts the bound Apify Actor with the caller's APIFY_TOKEN, may consume Apify usage, waits up to 60 seconds, and returns at most 1,000 source-linked rows without modifying government records.",
+    description: "Use for address, permit-ID, or jurisdiction research across 32 supported US short-term-rental permit sources. For Florida statewide DBPR lodging licenses, use fl-dbpr-vacation-rentals instead. Address mode preserves explicit evidence decisions, scope, and receipts. Starts the bound Apify Actor with the caller's APIFY_TOKEN, may consume Apify usage, waits up to 60 seconds, and returns at most 1,000 source-linked rows without modifying government records.",
   },
   {
     name: "fl-dbpr-vacation-rentals",
@@ -161,7 +161,7 @@ export async function callActorTool(name, input, {
 
 export function createServer(options = {}) {
   const server = new Server(
-    { name: "civicdataforge", version: "1.4.0" },
+    { name: "civicdataforge", version: "1.4.1" },
     { capabilities: { tools: {} } },
   );
   server.setRequestHandler(ListToolsRequestSchema, async () => ({ tools: TOOL_DEFINITIONS }));

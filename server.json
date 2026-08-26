@@ -3,7 +3,7 @@
   "name": "io.github.equinoxaifinance-rgb/civicdataforge",
   "title": "CivicDataForge Public-Records Data",
   "description": "Ten government-record evidence tools for property, healthcare, facilities, Norway, and routing.",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "repository": {
     "url": "https://github.com/equinoxaifinance-rgb/civicdataforge-mcp",
     "source": "github"

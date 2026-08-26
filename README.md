@@ -3,7 +3,6 @@
 [![CivicDataForge MCP server](https://glama.ai/mcp/servers/equinoxaifinance-rgb/civicdataforge-mcp/badges/card.svg)](https://glama.ai/mcp/servers/equinoxaifinance-rgb/civicdataforge-mcp)
 [![CivicDataForge MCP quality score](https://glama.ai/mcp/servers/equinoxaifinance-rgb/civicdataforge-mcp/badges/score.svg)](https://glama.ai/mcp/servers/equinoxaifinance-rgb/civicdataforge-mcp)
 [![AllMCPs Verified](https://allmcps.com/api/badge/civicdataforge-government-evidence)](https://allmcps.com/mcp/civicdataforge-government-evidence?verify=6641b3ab-b25c-4414-a18a-8dfc47acf45e)
-[![Listed on mcpservers.org](https://mcpservers.org/badge.svg)](https://mcpservers.org/servers/equinoxaifinance-rgb/civicdataforge-mcp)
 
 CivicDataForge gives MCP-compatible agents structured access to official government records through a stable
 credential-safe MCP relay backed by Apify. The official bundle exposes ten focused tools across unified evidence routing, property compliance, healthcare
@@ -142,7 +141,7 @@ npm 包正式发布并经注册表回读验证后，ModelScope 与本地 MCP 客
 | Tool | What it returns | Typical workflow |
 |---|---|---|
 | `civicdataforge-evidence-gateway` | One minimized, rights-labeled packet across U.S., India, global screening, EPA, or China-facing intake tasks, with monitoring and optional transaction state | Route one identifier to the correct evidence workflow without losing provenance or uncertainty |
-| `str-permit-registry` | Self-service address evidence decisions plus official STR permit/license records, dates, source links, and normalized jurisdiction fields across 30 supported US jurisdictions | Property verification, portfolio research, registry monitoring, and municipal research |
+| `str-permit-registry` | Self-service address evidence decisions plus official STR permit/license records, dates, source links, and normalized jurisdiction fields across 32 supported US jurisdictions | Property verification, portfolio research, registry monitoring, and municipal research |
 | `fl-dbpr-vacation-rentals` | Florida DBPR lodging-license records across seven official district files | State-license validation and property diligence |
 | `property-violations` | Normalized code and building-violation records from supported municipal sources | Property compliance research and monitoring |
 | `leie-exclusion-screening` | HHS-OIG LEIE records filtered by name, NPI, state, specialty, or exclusion type | Healthcare compliance and credentialing support |
@@ -197,3 +196,9 @@ This repository publishes discovery metadata for the hosted remote MCP endpoint 
 gateway that dispatches the same ten tools to Apify; the data Actors still run on Apify. Gateway code,
 metadata, and documentation are licensed under the included [MIT License](LICENSE). Government-source terms
 and record-level use restrictions remain source-specific and are documented on the corresponding Actor pages.
+
+The open bridge is deliberately not the CivicDataForge core. Source acquisition adapters, reconciliation
+pipelines, field-presence and drift monitors, source-rights controls, evidence-graph implementation, partner
+connectors, operational ledgers, and deployment configuration are maintained separately and are not licensed
+under this repository's MIT license. See [SECURITY.md](SECURITY.md) for the disclosure boundary and private
+evaluation route.
