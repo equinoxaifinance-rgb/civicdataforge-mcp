@@ -1,6 +1,6 @@
 {
   "name": "civicdataforge-mcp-gateway",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "private": false,
   "type": "module",
   "description": "Installable stdio MCP gateway for ten CivicDataForge government-record Actors.",
@@ -16,14 +16,16 @@
     "glama.json",
     "schemas/",
     "README.md",
-    "LICENSE"
+    "LICENSE",
+    "SECURITY.md"
   ],
   "publishConfig": {
     "access": "public"
   },
   "scripts": {
     "start": "node server.mjs",
-    "test": "node --test test/*.test.mjs"
+    "test": "node --test test/*.test.mjs",
+    "test:package-boundary": "node --test test/package-boundary.test.mjs"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "1.29.0",

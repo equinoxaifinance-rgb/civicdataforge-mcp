@@ -7,7 +7,7 @@
     "task": {
       "title": "Evidence task",
       "type": "string",
-      "enum": ["us_property_decision", "india_company_evidence", "india_supplier_pack", "restricted_party_screening", "epa_facility_evidence", "china_counterparty_intake"]
+      "enum": ["us_property_decision", "india_company_evidence", "india_supplier_pack", "restricted_party_screening", "epa_facility_evidence", "earth_observation_evidence", "china_counterparty_intake"]
     },
     "subject": { "title": "Exact subject identifiers", "type": "object", "additionalProperties": true },
     "evidence": { "title": "Rights-labeled customer or licensed evidence", "type": "array", "items": { "type": "object", "additionalProperties": true }, "default": [] },
