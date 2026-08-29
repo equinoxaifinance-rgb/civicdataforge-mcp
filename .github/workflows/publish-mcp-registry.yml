@@ -29,25 +29,59 @@ jobs:
       - name: Validate registry metadata
         run: ./mcp-publisher validate
 
+      - name: Check whether this exact version is already active
+        id: registry
+        shell: bash
+        run: |
+          set -euo pipefail
+          name="$(jq -er '.name' server.json)"
+          version="$(jq -er '.version' server.json)"
+          encoded_name="$(jq -rn --arg value "$name" '$value|@uri')"
+          url="https://registry.modelcontextprotocol.io/v0.1/servers/${encoded_name}/versions/${version}"
+          status="$(curl -sS -o registry-response.json -w '%{http_code}' "$url")"
+
+          if [[ "$status" == "404" ]]; then
+            echo "exists=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          if [[ "$status" != "200" ]]; then
+            echo "Registry preflight returned HTTP $status" >&2
+            cat registry-response.json >&2
+            exit 1
+          fi
+
+          jq -e --arg name "$name" --arg version "$version" \
+            '.server.name == $name and .server.version == $version and ._meta["io.modelcontextprotocol.registry/official"].status == "active"' \
+            registry-response.json >/dev/null
+          jq -S . server.json > expected-server.json
+          jq -S .server registry-response.json > published-server.json
+          if ! diff -u expected-server.json published-server.json; then
+            echo "The version already exists with different metadata; bump server.json version before publishing." >&2
+            exit 1
+          fi
+          echo "exists=true" >> "$GITHUB_OUTPUT"
+
       - name: Authenticate with GitHub OIDC
+        if: steps.registry.outputs.exists != 'true'
         run: ./mcp-publisher login github-oidc
 
       - name: Publish to the official MCP Registry
+        if: steps.registry.outputs.exists != 'true'
+        run: ./mcp-publisher publish
+
+      - name: Verify the active registry record
         shell: bash
         run: |
-          set +e
-          output="$(./mcp-publisher publish 2>&1)"
-          status=$?
-          set -e
-
-          printf '%s\n' "$output"
-          if [ "$status" -eq 0 ]; then
-            exit 0
-          fi
-
-          if grep -Fq 'invalid version: cannot publish duplicate version' <<<"$output"; then
-            echo "Registry version is already published; treating this idempotent replay as current."
-            exit 0
-          fi
-
-          exit "$status"
+          set -euo pipefail
+          name="$(jq -er '.name' server.json)"
+          version="$(jq -er '.version' server.json)"
+          encoded_name="$(jq -rn --arg value "$name" '$value|@uri')"
+          url="https://registry.modelcontextprotocol.io/v0.1/servers/${encoded_name}/versions/${version}"
+          curl --fail --silent --show-error "$url" -o registry-readback.json
+          jq -e --arg name "$name" --arg version "$version" \
+            '.server.name == $name and .server.version == $version and ._meta["io.modelcontextprotocol.registry/official"].status == "active"' \
+            registry-readback.json >/dev/null
+          jq -S . server.json > expected-server.json
+          jq -S .server registry-readback.json > published-server.json
+          diff -u expected-server.json published-server.json
