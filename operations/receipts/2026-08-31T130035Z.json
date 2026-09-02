@@ -1,0 +1,21 @@
+{
+  "observed_at": "2026-08-31T13:00:35.316Z",
+  "task": "CivicDataForge daily usage and 72-hour conversion monitor",
+  "status": "mixed",
+  "verified": {
+    "rolling_24h_owner_runs": "2/2 succeeded; 0 failed, aborted, or timed out; displayed rounded cost $0.002",
+    "public_store_30d": "124 public-Actor runs: 116 succeeded, 2 failed, 2 aborted, 4 timed out",
+    "external_user_floor": "at least one unique external user; overlap prevents a larger unique-person claim",
+    "stripe": "zero transactions, zero sales, and zero confirmed revenue",
+    "apify_earnings": "August earnings view shows $0.00 profit and $0.00 cost on visible monetized Actors",
+    "conversion": "latest complete Stripe window: 5 observable Payment Link views and 0 sales; prior window: 6 views and 0 sales",
+    "email": "one fresh ShoreLine Stays bounce thread, one Guesty decline, one Uplisting automated acknowledgement"
+  },
+  "unresolved": [
+    "Attribution of public Actor starts to specific people, buyers, or countries",
+    "Stripe analytics for August 30-31 due reporting lag",
+    "Checkout-view count for the recurring STR link",
+    "Common landing-page, scope-validation, fulfillment-retry, and referral instrumentation"
+  ],
+  "reusable_lesson": "Keep platform use, customer identity, country, and revenue as separate claims. The current measured bottleneck is conversion after checkout-page exposure, not a lack of callable infrastructure."
+}

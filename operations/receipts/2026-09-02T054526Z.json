@@ -1,0 +1,37 @@
+{
+  "schema_version": "civicdataforge.operations-monitor-receipt.v1",
+  "observed_at": "2026-09-02T05:45:26.596Z",
+  "task": "CivicDataForge daily usage and rolling 72-hour conversion monitor",
+  "status": "MIXED",
+  "verified": {
+    "apify_rolling_24h": "4 starts, 4 succeeded, 0 failed, all 4 owner-attributed, platform usage $0.003136715",
+    "apify_portfolio": "21 owned Actors, 19 public, conservative distinct external-account lifetime lower bound 6",
+    "website_conversion_72h": "34 anonymous non-canary page-view sessions, 1 offer-view session, 0 scope validations, 0 checkout starts",
+    "stripe": "live account activated; Transactions page contains no payment rows; verified revenue $0",
+    "first_party_api": "one successful owner-live-canary request; no AWS Marketplace customer or registration",
+    "hospitable": "Partner Network profile published; 0 connected listings and 0 webhook events in production",
+    "filesure": "no new response after the acknowledged pilot handoff; waiting on product-lead commercial and licensing guidance",
+    "datameet": "one substantive community follow-up requesting block-level boundary data",
+    "github": "public canonical repository at main SHA 322c5793f406630c1964940c7e112896aae2f00c; 0 stars, 0 forks, 0 open issues",
+    "public_site": "home, evidence gateway, agent connection guide and OpenAPI document each returned HTTP 200"
+  },
+  "revenue": {
+    "confirmed_payments": 0,
+    "verified_revenue_usd": 0.0
+  },
+  "single_measured_bottleneck": "Thirty-four anonymous page-view sessions produced one offer view and no scope validation, checkout or payment.",
+  "next_reversible_experiment": "One sample-led, tagged permit offer CTA from the highest-traffic general and agent API pages into the existing validation and $4.99 checkout path.",
+  "yellow_gates": [
+    "AWS seller browser session expired before final staging submission.",
+    "The DataMeet block-level follow-up needs a verified artifact and action-time approval before reply.",
+    "No customer, paid order, Hospitable listing or production webhook is established."
+  ],
+  "sources": [
+    "authenticated Apify API v2 daily audit receipt sha256:3d070c7bbb9d4c2b16b58a3ac8e059a36f6d4d76b56c985de553dd4ed2d7dbf8",
+    "production Cloudflare D1 read-only aggregates",
+    "authenticated Stripe CivicDataForge dashboard and Transactions page",
+    "complete current Hospitable, FileSure, DataMeet and outreach email threads",
+    "public GitHub REST API and native git remote readback",
+    "public HTTP endpoint readback"
+  ]
+}
