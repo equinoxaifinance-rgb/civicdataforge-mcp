@@ -53,18 +53,18 @@ For an MCP client, use `node /absolute/path/to/server.mjs` as the command and su
 the client's secret environment configuration. Successful calls return the Apify run ID, dataset ID, status,
 and up to 1,000 dataset rows. Larger outputs remain available from the caller-owned Apify dataset.
 
-### npm and ModelScope configuration
+### Portable GitHub and ModelScope configuration
 
-After the public npm package is released, MCP clients and ModelScope can use the portable STDIO command
-below. The package does not contain a CivicDataForge or Apify credential. Tool discovery works without a
-token; each caller supplies `APIFY_TOKEN` for actual Actor runs.
+MCP clients and ModelScope can install the open bridge directly from the canonical GitHub repository. The
+bridge does not contain a CivicDataForge or Apify credential. Tool discovery works without a token; each
+caller supplies `APIFY_TOKEN` for actual Actor runs.
 
 ```json
 {
   "mcpServers": {
     "civicdataforge": {
       "command": "npx",
-      "args": ["-y", "civicdataforge-mcp-gateway@latest"],
+      "args": ["-y", "github:equinoxaifinance-rgb/civicdataforge-mcp"],
       "env": {
         "APIFY_TOKEN": "YOUR_APIFY_TOKEN"
       }
@@ -73,9 +73,8 @@ token; each caller supplies `APIFY_TOKEN` for actual Actor runs.
 }
 ```
 
-Do not use this package name as a live install instruction until the npm registry returns the published
-version. The GitHub source checkout and hosted Apify MCP endpoint remain the current working paths before
-that release receipt exists.
+This GitHub install route is the current portable STDIO path. The hosted Apify MCP endpoint remains available
+for clients that support remote MCP directly.
 
 ## 简体中文：接入与使用边界
 
@@ -109,14 +108,14 @@ https://mcp.apify.com/?tools=civicdataforge/india-company-registry
 该中文入口只提供现有美国房产证据和印度公司证据，不声称中国企业登记数据库、GSXT 批量
 API 或中国本地官方记录覆盖。
 
-npm 包正式发布并经注册表回读验证后，ModelScope 与本地 MCP 客户端可使用以下 STDIO 配置：
+ModelScope 与本地 MCP 客户端可直接从官方 GitHub 仓库安装开放网关：
 
 ```json
 {
   "mcpServers": {
     "civicdataforge": {
       "command": "npx",
-      "args": ["-y", "civicdataforge-mcp-gateway@latest"],
+      "args": ["-y", "github:equinoxaifinance-rgb/civicdataforge-mcp"],
       "env": {
         "APIFY_TOKEN": "YOUR_APIFY_TOKEN"
       }
@@ -125,8 +124,7 @@ npm 包正式发布并经注册表回读验证后，ModelScope 与本地 MCP 客
 }
 ```
 
-在 npm 注册表返回已发布版本之前，请勿把上述包名当作当前可用的安装路径；目前可用路径是
-本仓库源码或上方 Apify 托管网关。十个默认工具包括统一证据路由器、短租许可、佛罗里达州住宿执照、
+该 GitHub 安装方式和上方 Apify 托管网关均为当前可用路径。十个默认工具包括统一证据路由器、短租许可、佛罗里达州住宿执照、
 房产违规、HHS-OIG LEIE 医疗排除名单、餐厅检查、多州与德州托育许可、EPA ECHO 设施证据和挪威企业证据。
 
 挪威企业数据适用 NLOD 2.0，可在遵守署名、变更说明及其他许可条件下商业再利用；但若记录含个人数据，
