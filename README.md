@@ -1,5 +1,7 @@
 # CivicDataForge — Official Public-Records Data for AI Agents
 
+Developer guides: [discover tools before billing](https://github.com/equinoxaifinance-rgb/civicdataforge-mcp/blob/main/guides/discovery-before-billing.md) · [inspect the Bengaluru sample](https://github.com/equinoxaifinance-rgb/civicdataforge-mcp/blob/main/guides/bengaluru-sample.md).
+
 [![CivicDataForge MCP server](https://glama.ai/mcp/servers/equinoxaifinance-rgb/civicdataforge-mcp/badges/card.svg)](https://glama.ai/mcp/servers/equinoxaifinance-rgb/civicdataforge-mcp)
 [![CivicDataForge MCP quality score](https://glama.ai/mcp/servers/equinoxaifinance-rgb/civicdataforge-mcp/badges/score.svg)](https://glama.ai/mcp/servers/equinoxaifinance-rgb/civicdataforge-mcp)
 [![AllMCPs Verified](https://allmcps.com/api/badge/civicdataforge-government-evidence)](https://allmcps.com/mcp/civicdataforge-government-evidence?verify=6641b3ab-b25c-4414-a18a-8dfc47acf45e)
