@@ -1,0 +1,64 @@
+{
+  "schema_version": "civicdataforge.production-repair-receipt.v1",
+  "recorded_at": "2026-09-09T07:31:15.079Z",
+  "scope": "Florida DBPR vacation-rental Actor reliability and source-integrity repair",
+  "actor": {
+    "id": "DcVHAhDzE2eVnmHMg",
+    "name": "civicdataforge/fl-dbpr-vacation-rentals",
+    "version": "0.2",
+    "build_id": "Cfwbc0g1c1KR2F5hZ",
+    "build_number": "0.2.5",
+    "source_core_sha256": "6b35dd12c98b5acc855f78bda26bbf75142d8a848d34241271976e5eaf1d2d53"
+  },
+  "repair": {
+    "bounded_fetch_concurrency": 3,
+    "maximum_fetch_concurrency": 4,
+    "request_timeout_ms": 75000,
+    "request_attempts": 3,
+    "district_order_preserved": true,
+    "global_record_cap_preserved": true,
+    "partial_source_warning": true,
+    "all_sources_failed_closed": true,
+    "source_updated_at_preserved": true
+  },
+  "verification": {
+    "local_existing_tests": {"status": "PASS"},
+    "local_runtime_regressions": {"status": "PASS", "tests": 2},
+    "official_source_smoke": {
+      "status": "PASS",
+      "records": 25,
+      "records_scanned": 177781,
+      "districts_ok": [1, 2, 3, 4, 5, 6, 7]
+    },
+    "production_run": {
+      "id": "6lQ5kxO7IJlX5bsc7",
+      "status": "SUCCEEDED",
+      "started_at": "2026-09-09T07:26:56.676Z",
+      "completed_at": "2026-09-09T07:31:15.079Z",
+      "duration_seconds": 259,
+      "cost_usd": 0.019,
+      "dataset_id": "ext5uMKYTQbvbOhSa",
+      "key_value_store_id": "tSdVfhjicFdwwj92t",
+      "records_emitted": 25,
+      "records_scanned": 177781,
+      "coverage": "complete_source_scan_for_location_filter",
+      "districts_ok": [1, 2, 3, 4, 5, 6, 7],
+      "districts_failed": [],
+      "source_receipts": 7,
+      "warning": null,
+      "dataset_digest": "sha256:14eff603eecc61c549fd19361d6c5d065a16ba71e7da0086dd879202f2d0f0aa",
+      "run_receipt_hash": "sha256:a174c47b98518d5e36afb69a1d859f90a72f07e8a1975d580510c1c7c9ae1922"
+    },
+    "public_actor_readback": {
+      "is_public": true,
+      "notice": null,
+      "verified_at": "2026-09-09T07:23:26.736Z"
+    }
+  },
+  "failed_routes_retained": [
+    {"run_id": "om9N0VzYuyjjphecR", "cause": "Web IDE transcription typo", "reused": false},
+    {"run_id": "trbHtbmkOfd9Xbsc7", "cause": "DBPR returned HTTP 403 to direct Apify datacenter traffic", "reused": false},
+    {"run_id": "iKAeF5RGVCzhllHB6", "cause": "one district returned HTTP 403 during an initial unthrottled proxy pass", "reused": false}
+  ],
+  "claim_boundary": "This receipt proves the repaired Actor and the cited owner QA run. It does not establish an external customer or revenue."
+}
