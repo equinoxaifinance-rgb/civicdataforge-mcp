@@ -1,0 +1,63 @@
+{
+  "schema_version": "civicdataforge.operational-sweep.v1",
+  "observed_at": "2026-09-16T06:09:49.8779092Z",
+  "scope": ["FileSure email", "Civic HQ inbox", "Neo inbox", "public Pages catalogs", "canonical MCP repository"],
+  "email": {
+    "filesure": {
+      "account": "bryan@tryneverclosed.com",
+      "latest_external_sender": "Tushar Mohite <Filesure India Private Limited>",
+      "latest_external_timestamp": "2026-09-15T08:06:00-04:00",
+      "classification": "waiting_external",
+      "required_action": "Run a private 5–10 CIN pilot directly against api.filesure.in on a standard key, under published terms.",
+      "commercial_boundary": "No reseller or revenue-share arrangement at evaluation stage; no redistribution or onward caching. Revisit only if demand and volume are demonstrated.",
+      "verification": "Full newest message read in the live Gmail thread; no reply or signup performed."
+    },
+    "civic_hq": {
+      "account": "civicdataforgehq@gmail.com",
+      "search": "newer_than:30d (FileSure OR API Test Results)",
+      "result": "no messages matched"
+    },
+    "neo": {
+      "account": "neoaethel@gmail.com",
+      "search": "newer_than:30d (MCP OR API OR integration OR partnership OR invitation OR DataMeet)",
+      "latest_relevant": [
+        "awesome-mcp-servers PR #13228 Living Stack merged (Sep 15)",
+        "Living Stack listing audit still reports 404 (Sep 15; owner note)",
+        "CivicDataForge PR #11902 merged (Sep 7)",
+        "mcpservers.org Living Stack listing approved (Sep 7)"
+      ],
+      "result": "No newer FileSure or CivicDataForge partnership decision found."
+    }
+  },
+  "repository": {
+    "canonical_repo": "https://github.com/equinoxaifinance-rgb/civicdataforge-mcp",
+    "commit": "8dae7049f6a7340d876d10b563cfb4dffb1cbd95",
+    "remote_sha": "8dae7049f6a7340d876d10b563cfb4dffb1cbd95",
+    "github_api_sha": "8dae7049f6a7340d876d10b563cfb4dffb1cbd95",
+    "authentication_docs": "README now separates caller-owned CivicDataForge hosted keys from direct caller-owned Apify tokens.",
+    "tests": {"npm_test_pass": 11, "npm_test_fail": 0, "npm_pack_files": 17}
+  },
+  "site": {
+    "deployment_alias": "https://ca00b77d.civicdataforge.pages.dev",
+    "canonical_url": "https://civicdataforge.pages.dev",
+    "site_verification": {"passed": 1016, "failed": 0},
+    "gateway_consistency": "PASS",
+    "public_secret_scan_findings": 0,
+    "source_health": {
+      "checked_at": "2026-09-16T05:57:21.472483+00:00",
+      "green": 30,
+      "yellow": 4,
+      "red": 0,
+      "source_receipt_hash": "sha256:757d23432727c46cc2e5354157880e0e508b19cb8f62dab4386c2c5337456b08"
+    },
+    "live_readback": "Canonical and deployment alias returned HTTP 200 for api-catalog.json, ai-catalog.json, .well-known/ai-catalog.json, openapi/evidence-gateway.openapi.json, and source-health.json; live catalogs expose the repaired 12-entry ARD and canonical run-sync path."
+  },
+  "remaining_yellow_gates": [
+    "india_ogd_company_master: historical snapshot through 2023-11-03; current-status production blocked.",
+    "restaurant_boulder: newest record 2026-07-21; current-status production blocked.",
+    "restaurant_king_county: newest record 2026-08-31; current-status production blocked.",
+    "film_permits_west_hollywood: stale records and a quarantined future-dated row; current-status production blocked.",
+    "FileSure pilot requires owner-controlled signup/API key and must stay private/non-redistributing under the current terms."
+  ],
+  "external_actions": "No email reply, partner signup, purchase, or account mutation performed."
+}
