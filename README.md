@@ -31,14 +31,19 @@ Use this Streamable HTTP endpoint:
 https://civicdataforge.pages.dev/mcp
 ```
 
-Public `initialize` and `tools/list` discovery work without a credential. For tool calls, send your raw Apify API token in the `X-Apify-Token` header:
+Public `initialize` and `tools/list` discovery work without a credential. The hosted gateway supports two explicit caller-owned paths:
+
+- For CivicDataForge's metered hosted evidence gateway, send the issued CivicDataForge key as either `Authorization: Bearer YOUR_CIVICDATAFORGE_KEY` or `X-CivicDataForge-Key: YOUR_CIVICDATAFORGE_KEY`.
+- For direct Apify-backed Actor calls, send your own Apify token in `X-Apify-Token`:
 
 ```text
 X-Apify-Token: YOUR_APIFY_TOKEN
 ```
 
-An Apify account and API token are required. Each Actor has its own pricing, input schema, source notes, and
-usage limits on its Store page.
+The hosted CivicDataForge path meters successful bounded evidence requests through its active commercial route;
+direct Actor calls remain caller-owned Apify usage. Each Actor has its own pricing, input schema, source notes,
+and usage limits on its Store page. Never send a CivicDataForge key to an Actor endpoint or an Apify token to the
+hosted gateway.
 
 ## Run the installable stdio gateway
 
