@@ -1,0 +1,169 @@
+{
+  "observed_at": "2026-09-04T15:24:29.1916283-04:00",
+  "timezone": "America/New_York",
+  "status": "MIXED",
+  "business_outcome": {
+    "confirmed_external_paying_customers": 0,
+    "confirmed_revenue_usd": 0.0,
+    "primary_bottleneck": "68 anonymous page-view sessions produced 2 actor opens, 1 commercial-route open, 0 offer views, 0 scope validations, 0 checkout redirects and 0 payments"
+  },
+  "website": {
+    "production_d1_read": "2026-09-04T19:22:30Z",
+    "latest_72h": {
+      "anonymous_non_canary_page_view_sessions": 68,
+      "actor_open_sessions": 2,
+      "commercial_route_open_sessions": 1,
+      "offer_view_sessions": 0,
+      "scope_validation_started": 0,
+      "checkout_redirected": 0,
+      "confirmed_payments": 0,
+      "fulfillments": 0
+    },
+    "prior_72h": {
+      "anonymous_non_canary_page_view_sessions": 23,
+      "offer_view_sessions": 1,
+      "confirmed_payments": 0
+    },
+    "change": {
+      "page_view_sessions": 45,
+      "page_view_percent": 195.652173913,
+      "offer_view_sessions": -1
+    },
+    "rolling_24h_anonymous_page_views": {
+      "total": 28,
+      "IN": 12,
+      "US": 6,
+      "FI": 4,
+      "SG": 3,
+      "GB": 1,
+      "JP": 1,
+      "CN": 1
+    },
+    "latest_72h_country_page_views": {
+      "US": 28,
+      "IN": 24,
+      "FI": 8,
+      "SG": 3,
+      "GB": 2,
+      "JP": 2,
+      "CN": 1
+    },
+    "latest_72h_acquisition_sessions": {
+      "direct": 48,
+      "civicdataforge_referral": 8,
+      "google_groups_referral": 5,
+      "gmail_referral": 3,
+      "apify_referral": 2,
+      "google_organic": 1,
+      "bing_organic": 1
+    },
+    "d1_infrastructure_last_24h": {
+      "queries_displayed": "1k",
+      "rows_read_displayed": "5k",
+      "rows_written": 319,
+      "storage_used": "598 kB",
+      "boundary": "infrastructure workload is not customer attribution"
+    },
+    "commerce_tables": {
+      "fulfillment_engagements_lifetime": 4,
+      "fulfillment_engagements_latest_72h": 0,
+      "stripe_webhook_events_lifetime": 4,
+      "stripe_webhook_events_latest_72h": 0,
+      "hospitable_listings": 0,
+      "hospitable_webhook_events": 0
+    },
+    "boundary": "country and channel values describe anonymous page events, not buyers or Apify run attribution"
+  },
+  "apify": {
+    "rolling_24h": {
+      "window_start": "2026-09-03T15:10:45.445374-04:00",
+      "window_end": "2026-09-04T15:10:45.445374-04:00",
+      "owner_visible_starts": 2,
+      "succeeded": 2,
+      "failed": 0,
+      "aborted": 0,
+      "timed_out": 0,
+      "platform_usage_usd": 0.002034274,
+      "classification": "both enabled owner schedules"
+    },
+    "portfolio": {
+      "owned_actors": 21,
+      "public_actors": 19,
+      "private_actors": 2,
+      "lifetime_platform_runs": 545,
+      "owner_visible_lifetime_runs": 249,
+      "inferred_non_owner_platform_run_lower_bound": 296,
+      "actor_user_relationship_sum": 36,
+      "users_7d_relationship_sum": 7,
+      "users_30d_relationship_sum": 13,
+      "conservative_distinct_external_account_lower_bound": 6
+    },
+    "public_store_30d": {
+      "runs": 139,
+      "succeeded": 136,
+      "failed": 1,
+      "timed_out": 2,
+      "aborted": 0
+    },
+    "current_start_signals_absent_from_owner_table": 7,
+    "monetization": {
+      "actor_level_paying_user_relationship_counters": 3,
+      "boundary": "may overlap or include owner; not confirmed external buyers",
+      "creator_profit_usd": 0.0,
+      "payout_invoices": 0
+    },
+    "platform_spend_usd": 3.88,
+    "source_receipt_sha256": "8461B1858F0EB0BA172F394FBD637727B1048835CCFCE920590BCE9EDAB86A02"
+  },
+  "aws_marketplace": {
+    "seller_submission": "UNDER_REVIEW",
+    "offer_status": "AVAILABLE_FOR_PURCHASE",
+    "registrations": 2,
+    "active_registrations": 0,
+    "api_customers": [
+      {"source": "owner-live-canary", "classification": "owner test"},
+      {"source": "aws_marketplace", "classification": "seller-operations test"}
+    ],
+    "api_usage": [
+      {"source": "owner-live-canary", "tool": "epa_facility_evidence", "state": "SUCCEEDED", "units": 1},
+      {"source": "aws_marketplace", "tool": "us_property_decision", "state": "SUCCEEDED", "units": 1}
+    ],
+    "metering_batches": 1,
+    "confirmed_revenue_usd": 0.0,
+    "boundary": "both registrations are deprovisioned; the latest test never redeemed a key"
+  },
+  "stripe": {
+    "live_transaction_rows": 0,
+    "confirmed_payments": 0,
+    "confirmed_revenue_usd": 0.0
+  },
+  "hospitable": {
+    "lifetime_leads": 0,
+    "lifetime_leads_won": 0,
+    "lifetime_revenue_usd": 0.0,
+    "commissions_pending_usd": 0.0,
+    "commissions_paid_usd": 0.0,
+    "connected_listings": 0,
+    "webhook_events": 0,
+    "owner_qa_api_log_entries": 8
+  },
+  "github": {
+    "main_sha": "71fa23a9ae2a211c58dfeed9be488e96aa2cace8",
+    "pushed_at": "2026-09-04T08:38:54Z",
+    "stars": 0,
+    "forks": 0,
+    "watchers": 0,
+    "open_issues": 0,
+    "traffic_views_and_clones": null,
+    "traffic_gate": "authenticated traffic scope unavailable"
+  },
+  "email": {
+    "canonical_inbox_new_operational_messages_24h": 0,
+    "canonical_inbox_marketing_messages_24h": 1,
+    "neo_datameet_requests_24h": 1,
+    "latest_signal": "DataMeet request to structure Goa Legislative Assembly mining-transport PDFs",
+    "new_reply_label_messages_24h": 0,
+    "new_bounce_label_messages_24h": 0,
+    "classification": "community product-discovery signal, not a buyer or revenue receipt"
+  }
+}

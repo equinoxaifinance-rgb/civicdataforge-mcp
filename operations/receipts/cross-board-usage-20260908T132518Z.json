@@ -1,0 +1,105 @@
+{
+  "observed_at": "2026-09-08T13:25:18.3345323Z",
+  "measurement_end": "2026-09-08T13:01:19.962Z",
+  "timezone": "America/New_York",
+  "method": "Read-only authenticated Apify API, Cloudflare D1, production India health endpoint, restricted live Stripe API, canonical GitHub API, and complete current Gmail thread readback.",
+  "apify": {
+    "rolling_24h": {
+      "window_start": "2026-09-07T13:01:19.962Z",
+      "aggregate_actor_counter_starts": 10,
+      "outcome_observable": {"succeeded": 2, "failed": 0, "aborted": 0, "timed_out": 1, "running_or_other": 0},
+      "outcome_unobservable_counter_increments": 7,
+      "owner_schedule_runs": 2,
+      "platform_qa_runs_identified": 1,
+      "other_identified_account_runs": 0,
+      "unattributed_or_platform_counter_increments": 7,
+      "observable_usage_usd_floor": 0.080039707,
+      "owner_schedule_usage_usd": 0.001989707,
+      "platform_qa_run_usage_usd": 0.07805,
+      "claim_boundary": "Actor counters establish ten starts since the prior authenticated 2026-09-08T02:54:14Z read. Two owner schedule rows and one Apify QA row expose outcome and usage. The other seven increments do not expose identity, outcome, country, cost, or customer status."
+    },
+    "recent_observable_runs": [
+      {"actor":"fl-dbpr-vacation-rentals","run_id":"2L9yarmSv06WY7uUg","status":"TIMED-OUT","started_at":"2026-09-08T03:10:40.055Z","origin":"TEST","usage_total_usd":0.07805,"classification":"Apify automated quality-assurance run"},
+      {"actor":"restaurant-inspection-scores","run_id":"G06nQtrzYe01GOI8h","status":"SUCCEEDED","started_at":"2026-09-08T10:15:03.502Z","origin":"SCHEDULER","usage_total_usd":0.000287186,"classification":"owner schedule"},
+      {"actor":"str-permit-registry","run_id":"TFHBiWAcm73PqhE4p","status":"SUCCEEDED","started_at":"2026-09-08T10:30:19.610Z","origin":"SCHEDULER","usage_total_usd":0.001702521,"classification":"owner schedule"}
+    ],
+    "new_platform_failure": {
+      "actor": "fl-dbpr-vacation-rentals",
+      "public_title": "Florida Vacation Rental Licenses (DBPR Statewide)",
+      "actor_notice": "UNDER_MAINTENANCE",
+      "trigger_run_id": "2L9yarmSv06WY7uUg",
+      "cause": "Apify automated quality-assurance run reached the fixed 300-second test timeout with no application error in the log.",
+      "email_observed_at": "2026-09-08T00:08:00-04:00",
+      "current_state_read_at": "2026-09-08T13:22:00Z"
+    },
+    "daily_utc_owner_visible": [
+      {"date":"2026-08-20","starts":2,"succeeded":2,"failed":0,"aborted":0,"timed_out":0,"usage_usd":0.002054680},
+      {"date":"2026-08-21","starts":24,"succeeded":20,"failed":4,"aborted":0,"timed_out":0,"usage_usd":0.032815246},
+      {"date":"2026-08-22","starts":16,"succeeded":15,"failed":1,"aborted":0,"timed_out":0,"usage_usd":0.025433433},
+      {"date":"2026-08-23","starts":63,"succeeded":62,"failed":1,"aborted":0,"timed_out":0,"usage_usd":0.081804548},
+      {"date":"2026-08-24","starts":13,"succeeded":13,"failed":0,"aborted":0,"timed_out":0,"usage_usd":0.008344614},
+      {"date":"2026-08-25","starts":17,"succeeded":15,"failed":2,"aborted":0,"timed_out":0,"usage_usd":0.010559939},
+      {"date":"2026-08-26","starts":7,"succeeded":3,"failed":4,"aborted":0,"timed_out":0,"usage_usd":0.006836165},
+      {"date":"2026-08-27","starts":4,"succeeded":4,"failed":0,"aborted":0,"timed_out":0,"usage_usd":0.005408475},
+      {"date":"2026-08-28","starts":15,"succeeded":13,"failed":2,"aborted":0,"timed_out":0,"usage_usd":0.098615899},
+      {"date":"2026-08-29","starts":28,"succeeded":28,"failed":0,"aborted":0,"timed_out":0,"usage_usd":0.019188727},
+      {"date":"2026-08-30","starts":2,"succeeded":2,"failed":0,"aborted":0,"timed_out":0,"usage_usd":0.002089606},
+      {"date":"2026-08-31","starts":2,"succeeded":2,"failed":0,"aborted":0,"timed_out":0,"usage_usd":0.002190759},
+      {"date":"2026-09-01","starts":4,"succeeded":4,"failed":0,"aborted":0,"timed_out":0,"usage_usd":0.003136715},
+      {"date":"2026-09-02","starts":2,"succeeded":2,"failed":0,"aborted":0,"timed_out":0,"usage_usd":0.002510125},
+      {"date":"2026-09-03","starts":4,"succeeded":4,"failed":0,"aborted":0,"timed_out":0,"usage_usd":0.004079913},
+      {"date":"2026-09-04","starts":2,"succeeded":2,"failed":0,"aborted":0,"timed_out":0,"usage_usd":0.002034274},
+      {"date":"2026-09-05","starts":2,"succeeded":2,"failed":0,"aborted":0,"timed_out":0,"usage_usd":0.002477648},
+      {"date":"2026-09-06","starts":3,"succeeded":2,"failed":1,"aborted":0,"timed_out":0,"usage_usd":0.002894516},
+      {"date":"2026-09-07","starts":2,"succeeded":2,"failed":0,"aborted":0,"timed_out":0,"usage_usd":0.002283106},
+      {"date":"2026-09-08","complete":false,"starts":2,"succeeded":2,"failed":0,"aborted":0,"timed_out":0,"usage_usd":0.001989707}
+    ],
+    "complete_week_comparison": {
+      "latest":{"dates":"2026-09-01..2026-09-07","starts":19,"succeeded":18,"failed":1,"aborted":0,"usage_usd":0.019416296},
+      "prior":{"dates":"2026-08-25..2026-08-31","starts":75,"succeeded":67,"failed":8,"aborted":0,"usage_usd":0.144889570},
+      "change":{"starts":-56,"succeeded":-49,"failed":-7,"aborted":0,"usage_usd":-0.125473274}
+    },
+    "cumulative_20d_owner_visible":{"dates":"2026-08-20..2026-09-08_partial","starts":214,"succeeded":199,"failed":15,"aborted":0,"timed_out":0,"usage_usd":0.316748093},
+    "lifetime_actor_counter_sum":587,
+    "portfolio":{"owned_actors":21,"public_actors":19,"actor_user_relationships":36,"conservative_external_user_actor_relationship_lower_bound":15,"actors_with_external_user_evidence":9,"conservative_distinct_external_account_lower_bound":6,"change_since_prior_read":"unchanged"},
+    "creator_revenue_usd":"UNOBSERVABLE_CURRENT"
+  },
+  "conversion_72h": {
+    "current_window":{"start":"2026-09-05T13:01:19.962Z","end":"2026-09-08T13:01:19.962Z","landing_page_view_sessions":17,"actor_open_sessions":1,"commercial_route_open_sessions":1,"offer_view_sessions":0,"scope_validation_started":0,"scope_validation_succeeded":0,"checkout_redirected":0,"confirmed_stripe_payments":0,"automatic_fulfillment_successes":0,"automatic_fulfillment_failures":0,"repeat_use":0,"verified_revenue_usd":0.0},
+    "prior_window":{"start":"2026-09-02T13:01:19.962Z","end":"2026-09-05T13:01:19.962Z","landing_page_view_sessions":53,"actor_open_sessions":2,"commercial_route_open_sessions":1,"offer_view_sessions":0,"scope_validation_started":0,"scope_validation_succeeded":0,"checkout_redirected":0,"confirmed_stripe_payments":0,"automatic_fulfillment_successes":0,"automatic_fulfillment_failures":0,"repeat_use":0,"verified_revenue_usd":0.0},
+    "change":{"landing_page_view_sessions":-36,"landing_page_view_percent":-67.924528302,"actor_open_sessions":-1,"commercial_route_open_sessions":0,"confirmed_payments":0,"verified_revenue_usd":0.0},
+    "rolling_24h":{"landing_page_view_sessions":9,"actor_open_sessions":1,"commercial_route_open_sessions":1,"offer_view_sessions":0,"scope_validation_started":0,"checkout_redirected":0,"confirmed_payments":0,"verified_revenue_usd":0.0},
+    "acquisition_current_72h":{"direct_sessions":11,"google_groups_referral_sessions":4,"civicdataforge_referral_sessions":2},
+    "country_acquisition_signals_current_72h":{"US_sessions":5,"IN_sessions":2,"CN_sessions":0,"boundary":"Anonymous non-canary analytics sessions; not buyer identity and not run-country attribution."},
+    "country_acquisition_signals_prior_72h":{"US_sessions":16,"IN_sessions":22,"CN_sessions":1},
+    "email":{"substantive_partner_replies":1,"new_bounces_observed":0,"partner_reply":{"sender":"Hostex Team <contact@hostex.io>","received_at":"2026-09-08T02:45:00-04:00","substance":"Hostex supplied its public API documentation and explicitly invited CivicDataForge to proceed with integration development on our side."},"scope_boundary":"Complete Hostex thread and targeted newer-than-one-day partner/reply/bounce searches were read. This is not a guarantee that every historical label or unauthenticated inbox has zero bounces."},
+    "partner_referrals":0,
+    "single_measured_bottleneck":"Traffic-to-qualified-action conversion: 17 current-window landing sessions produced zero offer views, validations, checkout redirects, or payments.",
+    "next_reversible_experiment":{"name":"proof-led CTA exposure measurement","duration_hours":72,"design":"Measure one existing above-the-fold proof-led CTA with a unique campaign tag on the highest-traffic receiving route; do not change price or product scope.","success_measure":"At least one offer view and one scope-validation start; a signed live Stripe payment remains the revenue gate.","mutation_status":"recommended_only_not_executed_by_monitor"}
+  },
+  "india_starter": {
+    "observation_deadline":"2026-09-12T23:59:59Z",
+    "health":{"state":"DEGRADED","checked_at":"2026-09-08T13:15:17.218Z","alerts":0,"dataset":"gba-municipal-assets","code":"OFFICIAL_SOURCE_TEMPORARILY_UNAVAILABLE","source_error":"UPSTREAM_ROUTES_UNAVAILABLE_502","serving":"LAST_VERIFIED_VERSION"},
+    "last_good":{"version":"31277522feb7c5711144940fc6e637311f20a7abfccc0027315b1d2a1638f810","row_count":6817,"created_at":"2026-09-05T03:29:33.041Z","age_hours_at_measurement":81.529702,"older_than_36h":true,"future_dated":false},
+    "goa_mineral_blocks":{"row_count":12,"latest_tick_state":"UNCHANGED","checked_at":"2026-09-08T09:00:45.485Z"},
+    "events_six_days":{"live":{"offer_views":0,"checkouts":0,"payments":0,"activations":0,"results":0,"refunds":0},"test":{"checkouts":2,"payments":2,"activations":2,"results":2,"revocations":2},"unattributed":{"offer_views":1}},
+    "orders":{"live":0,"test_revoked":2,"paid_older_than_15m_not_activated":0,"expired_live":0},
+    "usage":{"live_buyer_calls":0,"test_or_owner_qa_calls":377,"breakdown":{"owner_india_qa":365,"owner_environmental_qa":8,"india_starter_test":3,"india_stripe_canceled_test":1}},
+    "repeat_live_use":0,
+    "deadline_result":"PENDING"
+  },
+  "channels": {
+    "stripe_live":{"payment_intents_since_2026_09_02":0,"successful_payment_intents":0,"charges":0,"paid_charges":0,"refunded_charges":0,"verified_gross_receipts_usd":0.0},
+    "hospitable":{"connected_listings":0,"webhook_events":0,"partner_referrals":0},
+    "aws":{"active_license_events":0,"deprovisioned_license_events":2,"confirmed_revenue_usd":0.0},
+    "github":{"stars":0,"forks":0,"watchers":0,"open_issues":0,"pushed_at":"2026-09-06T19:54:01Z"}
+  },
+  "verified_revenue_receipts":[],
+  "yellow_gates": [
+    "NEW: Apify placed fl-dbpr-vacation-rentals under maintenance after its automated QA run timed out at the fixed five-minute limit.",
+    "GBA official-source routes remain unavailable with HTTP 502; the retained 6,817-row last-good version is now older than 36 hours.",
+    "Seven of ten new Apify actor-counter increments do not expose identity, outcome, country, or cost and therefore are activity signals only.",
+    "No signed live Stripe payment, automatic fulfillment, repeat live use, active AWS license, Hospitable listing, or verified revenue receipt was observed.",
+    "Current 72-hour landing sessions fell 67.92% versus the prior adjacent window and still produced zero qualified-action events."
+  ]
+}

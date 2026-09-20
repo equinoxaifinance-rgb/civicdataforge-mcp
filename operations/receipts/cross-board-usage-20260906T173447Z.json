@@ -1,0 +1,40 @@
+{
+  "observed_at": "2026-09-06T17:34:47.940Z",
+  "timezone": "America/New_York",
+  "apify": {
+    "receipt": "C:\\Users\\Jesse\\Documents\\New project 2\\apify-takeover\\worktree\\the-company\\foundry\\growth\\receipts\\daily-usage-20260906T173424Z.json",
+    "receipt_hash": "sha256:8257208edb8eff46c27160fbe710c3dbc8c4241ca29d551a66584c64055e3f8d",
+    "rolling_24h": {"starts": 2, "succeeded": 2, "failed": 0, "aborted": 0, "timed_out": 0, "platform_usage_usd": 0.002741225, "owner_runs": 2, "other_identified_account_runs": 0, "unattributed_runs": 0},
+    "daily_buckets": [
+      {"date":"2026-09-01","starts":4,"succeeded":4,"failed":0,"platform_usage_usd":0.003136715},
+      {"date":"2026-09-02","starts":2,"succeeded":2,"failed":0,"platform_usage_usd":0.002510125},
+      {"date":"2026-09-03","starts":4,"succeeded":4,"failed":0,"platform_usage_usd":0.004079913},
+      {"date":"2026-09-04","starts":2,"succeeded":2,"failed":0,"platform_usage_usd":0.002034274},
+      {"date":"2026-09-05","starts":2,"succeeded":2,"failed":0,"platform_usage_usd":0.002477648},
+      {"date":"2026-09-06","starts":2,"succeeded":2,"failed":0,"platform_usage_usd":0.002741225,"complete_day":false}
+    ],
+    "cumulative_15d_through_2026_09_06": {"starts":167,"succeeded":158,"failed":9,"aborted":0,"platform_usage_usd":0.252018632},
+    "portfolio": {"owned_actors":21,"public_actors":19,"actor_user_relationships":36,"conservative_external_user_actor_relationship_lower_bound":15,"actors_with_external_user_evidence":9,"conservative_distinct_external_account_lower_bound":6},
+    "revenue": {"creator_revenue_usd":0.0}
+  },
+  "conversion": {
+    "receipt_observed_at": "2026-09-06T17:34:43.133Z",
+    "seven_day_window": {"start":"2026-08-30T17:34:43.133Z","end":"2026-09-06T17:34:43.133Z","anonymous_non_canary_events":114,"anonymous_non_canary_sessions":109,"owner_canary_events":3,"owner_canary_sessions":3,"offer_views":1,"scope_validation_starts":0,"scope_validation_successes":0,"checkout_redirects":0,"confirmed_stripe_payments":0,"verified_revenue_usd":0.0},
+    "acquisition_sessions": {"direct":76,"google_organic":12,"civicdataforge_referral":9,"groups_google_referral":6,"apify_referral":2,"gmail_referral":3,"bing_organic":1},
+    "exact_rolling_72h_comparison": "UNOBSERVABLE: current D1 report exposes a seven-day aggregate without event timestamps; no exact latest-vs-prior 72-hour split was promoted.",
+    "single_measured_bottleneck": "Traffic-to-qualified-action conversion: 109 anonymous sessions produced 1 offer-view session, 0 scope validations, 0 checkout redirects and 0 payments.",
+    "revenue": {"confirmed_stripe_payments":0,"verified_revenue_usd":0.0}
+  },
+  "india_starter": {
+    "health_endpoint": {"state":"HEALTHY","checked_at":"2026-09-06T17:33:47.940Z","alerts":[]},
+    "d1_read_only_queries": {"state":"UNOBSERVABLE","error":"CLOUDFLARE_401_AUTHENTICATION_ERROR","attempted_scripts":["read-pilot-orders.mjs","read-runtime.mjs"],"classification":"authentication failure; no order, event, payment or activation totals inferred"},
+    "deadline":"2026-09-12T23:59:59Z"
+  },
+  "yellow_gates": [
+    "No confirmed Stripe payment or revenue receipt was observed.",
+    "Exact rolling 72-hour conversion comparison is unavailable from the current aggregate endpoint.",
+    "India D1 order/event readback is UNOBSERVABLE because the authenticated client returned Cloudflare 401; the separate health endpoint passed.",
+    "Apify platform usage is cost, not creator revenue; user relationships may overlap and do not prove paying customers.",
+    "Anonymous traffic and country signals are not customer attribution."
+  ]
+}

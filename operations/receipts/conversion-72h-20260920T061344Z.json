@@ -1,0 +1,570 @@
+{
+  "schema": "civicdataforge.conversion-72h-receipt.v3",
+  "read_at": "2026-09-20T06:13:44.605Z",
+  "current_72h": {
+    "start": "2026-09-17T06:13:44.605Z",
+    "end": "2026-09-20T06:13:44.605Z",
+    "traffic": [
+      {
+        "is_canary": 0,
+        "n": 3923,
+        "sessions": 2276
+      }
+    ],
+    "stages": [
+      {
+        "event": "commercial_route_open",
+        "is_canary": 0,
+        "n": 1,
+        "sessions": 1
+      },
+      {
+        "event": "mcp_auth_challenge",
+        "is_canary": 0,
+        "n": 200,
+        "sessions": 158
+      },
+      {
+        "event": "mcp_initialize",
+        "is_canary": 0,
+        "n": 1634,
+        "sessions": 1634
+      },
+      {
+        "event": "mcp_ping",
+        "is_canary": 0,
+        "n": 135,
+        "sessions": 1
+      },
+      {
+        "event": "mcp_tools_list",
+        "is_canary": 0,
+        "n": 1941,
+        "sessions": 474
+      },
+      {
+        "event": "offer_viewed",
+        "is_canary": 0,
+        "n": 1,
+        "sessions": 1
+      },
+      {
+        "event": "page_view",
+        "is_canary": 0,
+        "n": 11,
+        "sessions": 11
+      }
+    ],
+    "acquisition": [
+      {
+        "channel": "developer_discovery",
+        "source": "mcp_public",
+        "campaign": "discovery_to_paid",
+        "n": 3910,
+        "sessions": 2265
+      },
+      {
+        "channel": "direct",
+        "source": "direct",
+        "campaign": "",
+        "n": 11,
+        "sessions": 10
+      },
+      {
+        "channel": "referral",
+        "source": "civicdataforge.pages.dev",
+        "campaign": "",
+        "n": 2,
+        "sessions": 1
+      }
+    ],
+    "countries": [
+      {
+        "country": "US",
+        "n": 2757,
+        "sessions": 1551
+      },
+      {
+        "country": "FI",
+        "n": 808,
+        "sessions": 493
+      },
+      {
+        "country": "FR",
+        "n": 100,
+        "sessions": 58
+      },
+      {
+        "country": "DE",
+        "n": 66,
+        "sessions": 57
+      },
+      {
+        "country": "CA",
+        "n": 33,
+        "sessions": 23
+      },
+      {
+        "country": "KR",
+        "n": 30,
+        "sessions": 22
+      },
+      {
+        "country": "NL",
+        "n": 28,
+        "sessions": 16
+      },
+      {
+        "country": "AT",
+        "n": 24,
+        "sessions": 13
+      },
+      {
+        "country": "GB",
+        "n": 24,
+        "sessions": 16
+      },
+      {
+        "country": "SE",
+        "n": 24,
+        "sessions": 13
+      },
+      {
+        "country": "CN",
+        "n": 9,
+        "sessions": 7
+      },
+      {
+        "country": "AR",
+        "n": 6,
+        "sessions": 6
+      },
+      {
+        "country": "JP",
+        "n": 4,
+        "sessions": 4
+      },
+      {
+        "country": "BE",
+        "n": 3,
+        "sessions": 3
+      },
+      {
+        "country": "CH",
+        "n": 2,
+        "sessions": 2
+      },
+      {
+        "country": "MX",
+        "n": 2,
+        "sessions": 2
+      },
+      {
+        "country": "ZA",
+        "n": 2,
+        "sessions": 2
+      },
+      {
+        "country": "IL",
+        "n": 1,
+        "sessions": 1
+      }
+    ],
+    "us_signals": [
+      {
+        "country": "US",
+        "n": 2757,
+        "sessions": 1551
+      }
+    ],
+    "india_signals": [],
+    "china_signals": [
+      {
+        "country": "CN",
+        "n": 9,
+        "sessions": 7
+      }
+    ],
+    "landing_views": 12,
+    "scope_validations": 0,
+    "checkout_starts": 0,
+    "confirmed_live_payments": 0,
+    "gross_verified_receipt_cents": 0,
+    "automatic_fulfillment": {
+      "succeeded": 0,
+      "failed": 0,
+      "retrying": 0
+    },
+    "payments": [],
+    "attribution_boundary": "is_canary=0 means anonymous non-canary browser activity, not a verified external person or customer."
+  },
+  "prior_72h": {
+    "start": "2026-09-14T06:13:44.605Z",
+    "end": "2026-09-17T06:13:44.605Z",
+    "traffic": [
+      {
+        "is_canary": 0,
+        "n": 3970,
+        "sessions": 2275
+      }
+    ],
+    "stages": [
+      {
+        "event": "mcp_auth_challenge",
+        "is_canary": 0,
+        "n": 205,
+        "sessions": 164
+      },
+      {
+        "event": "mcp_initialize",
+        "is_canary": 0,
+        "n": 1644,
+        "sessions": 1644
+      },
+      {
+        "event": "mcp_ping",
+        "is_canary": 0,
+        "n": 172,
+        "sessions": 1
+      },
+      {
+        "event": "mcp_tools_list",
+        "is_canary": 0,
+        "n": 1936,
+        "sessions": 455
+      },
+      {
+        "event": "page_view",
+        "is_canary": 0,
+        "n": 13,
+        "sessions": 13
+      }
+    ],
+    "acquisition": [
+      {
+        "channel": "developer_discovery",
+        "source": "mcp_public",
+        "campaign": "discovery_to_paid",
+        "n": 3957,
+        "sessions": 2262
+      },
+      {
+        "channel": "direct",
+        "source": "direct",
+        "campaign": "",
+        "n": 11,
+        "sessions": 11
+      },
+      {
+        "channel": "organic_search",
+        "source": "www.google.com",
+        "campaign": "",
+        "n": 1,
+        "sessions": 1
+      },
+      {
+        "channel": "referral",
+        "source": "civicdataforge.pages.dev",
+        "campaign": "",
+        "n": 1,
+        "sessions": 1
+      }
+    ],
+    "countries": [
+      {
+        "country": "US",
+        "n": 2847,
+        "sessions": 1573
+      },
+      {
+        "country": "FI",
+        "n": 787,
+        "sessions": 480
+      },
+      {
+        "country": "FR",
+        "n": 85,
+        "sessions": 51
+      },
+      {
+        "country": "DE",
+        "n": 75,
+        "sessions": 67
+      },
+      {
+        "country": "NL",
+        "n": 36,
+        "sessions": 19
+      },
+      {
+        "country": "GB",
+        "n": 33,
+        "sessions": 21
+      },
+      {
+        "country": "KR",
+        "n": 31,
+        "sessions": 23
+      },
+      {
+        "country": "AT",
+        "n": 27,
+        "sessions": 14
+      },
+      {
+        "country": "CN",
+        "n": 12,
+        "sessions": 9
+      },
+      {
+        "country": "SE",
+        "n": 8,
+        "sessions": 5
+      },
+      {
+        "country": "AR",
+        "n": 6,
+        "sessions": 6
+      },
+      {
+        "country": "JP",
+        "n": 6,
+        "sessions": 6
+      },
+      {
+        "country": "IE",
+        "n": 4,
+        "sessions": 3
+      },
+      {
+        "country": "PL",
+        "n": 4,
+        "sessions": 3
+      },
+      {
+        "country": "CH",
+        "n": 3,
+        "sessions": 2
+      },
+      {
+        "country": "IN",
+        "n": 2,
+        "sessions": 2
+      },
+      {
+        "country": "TH",
+        "n": 2,
+        "sessions": 2
+      },
+      {
+        "country": "CA",
+        "n": 1,
+        "sessions": 1
+      },
+      {
+        "country": "CO",
+        "n": 1,
+        "sessions": 1
+      }
+    ],
+    "us_signals": [
+      {
+        "country": "US",
+        "n": 2847,
+        "sessions": 1573
+      }
+    ],
+    "india_signals": [
+      {
+        "country": "IN",
+        "n": 2,
+        "sessions": 2
+      }
+    ],
+    "china_signals": [
+      {
+        "country": "CN",
+        "n": 12,
+        "sessions": 9
+      }
+    ],
+    "landing_views": 13,
+    "scope_validations": 0,
+    "checkout_starts": 0,
+    "confirmed_live_payments": 0,
+    "gross_verified_receipt_cents": 0,
+    "automatic_fulfillment": {
+      "succeeded": 0,
+      "failed": 0,
+      "retrying": 0
+    },
+    "payments": [],
+    "attribution_boundary": "is_canary=0 means anonymous non-canary browser activity, not a verified external person or customer."
+  },
+  "india_starter": {
+    "current_72h": {
+      "start": "2026-09-17T06:13:44.605Z",
+      "end": "2026-09-20T06:13:44.605Z",
+      "events": [],
+      "orders": [],
+      "revocations": [],
+      "usage": [],
+      "repeats": [],
+      "offer_views": 0,
+      "server_confirmed_checkouts": 0,
+      "confirmed_live_payments": 0,
+      "live_activations": 0,
+      "first_useful_results": 0,
+      "refunds": 0,
+      "repeat_customers": 0,
+      "attribution_boundary": "The starter schema separates live, test, and unattributed activity but does not establish owner versus external identity for every live or unattributed row."
+    },
+    "prior_72h": {
+      "start": "2026-09-14T06:13:44.605Z",
+      "end": "2026-09-17T06:13:44.605Z",
+      "events": [],
+      "orders": [],
+      "revocations": [],
+      "usage": [],
+      "repeats": [],
+      "offer_views": 0,
+      "server_confirmed_checkouts": 0,
+      "confirmed_live_payments": 0,
+      "live_activations": 0,
+      "first_useful_results": 0,
+      "refunds": 0,
+      "repeat_customers": 0,
+      "attribution_boundary": "The starter schema separates live, test, and unattributed activity but does not establish owner versus external identity for every live or unattributed row."
+    },
+    "observation_window": {
+      "start": "2026-09-05T00:00:00.000Z",
+      "deadline": "2026-09-12T23:59:59.000Z",
+      "observed_until": "2026-09-12T23:59:59.000Z",
+      "deadline_reached": true
+    },
+    "new_sales_enabled_value": "true",
+    "new_sales_disabled": true,
+    "live_availability": {
+      "configuration_enabled": true,
+      "checkout_enabled": false,
+      "new_sales_disabled": true,
+      "reasons": [
+        "OFFER_WINDOW_CLOSED"
+      ],
+      "sales_deadline": "2026-09-12T23:59:59Z",
+      "boundary": "The public offer response evaluates source freshness, cohort, refund, credentials, configuration, and deadline gates; a true environment flag alone does not establish an open checkout."
+    },
+    "dataset_health": {
+      "state": "DEGRADED",
+      "checked_at": "2026-09-20T06:13:44.605Z",
+      "alerts": [],
+      "degradations": [
+        {
+          "dataset": "gba-municipal-assets",
+          "code": "PRIMARY_SOURCE_UNAVAILABLE_FALLBACK_CORROBORATED",
+          "serving": "LAST_VERIFIED_PRIMARY_VERSION",
+          "version": "31277522feb7c5711144940fc6e637311f20a7abfccc0027315b1d2a1638f810",
+          "version_created_at": "2026-09-05T03:29:33.041Z",
+          "corroboration": "OpenCity public-domain GBA catalog matched all record identities plus PID, property details and area; it does not advance the primary publisher clock."
+        }
+      ]
+    },
+    "latest_ticks": [
+      {
+        "dataset": "bengaluru-eaasthi-wards",
+        "state": "UNCHANGED",
+        "error_code": null,
+        "checked_at": "2026-09-20T03:00:53.876Z",
+        "scheduled_at": "2026-09-20T03:00:25.000Z"
+      },
+      {
+        "dataset": "gba-municipal-assets",
+        "state": "CORROBORATED_FALLBACK",
+        "error_code": "PRIMARY_SOURCE_UNAVAILABLE_FALLBACK_CORROBORATED",
+        "checked_at": "2026-09-20T05:37:38.576Z",
+        "scheduled_at": "2026-09-20T05:37:27.293Z"
+      },
+      {
+        "dataset": "goa-environmental-projects",
+        "state": "SOURCE_LINKS_REACHABLE",
+        "error_code": "AVAILABILITY_ONLY_CURRENT_STATUS_NOT_ASSERTED",
+        "checked_at": "2026-09-20T05:45:39.498Z",
+        "scheduled_at": "2026-09-20T05:45:38.010Z"
+      },
+      {
+        "dataset": "goa-mineral-blocks",
+        "state": "UNCHANGED",
+        "error_code": null,
+        "checked_at": "2026-09-20T03:00:49.409Z",
+        "scheduled_at": "2026-09-20T03:00:25.000Z"
+      }
+    ],
+    "active_versions": [
+      {
+        "dataset": "bengaluru-eaasthi-wards",
+        "version": "fa5b06d4ff80921062751d7cf4965d18a874a147dc148612b731770eb4229e8c",
+        "row_count": 199,
+        "created_at": "2026-09-11T09:22:28.051Z",
+        "source_date": null
+      },
+      {
+        "dataset": "gba-municipal-assets",
+        "version": "31277522feb7c5711144940fc6e637311f20a7abfccc0027315b1d2a1638f810",
+        "row_count": 6817,
+        "created_at": "2026-09-05T03:29:33.041Z",
+        "source_date": null
+      },
+      {
+        "dataset": "goa-environmental-projects",
+        "version": "58f9a0be9fb132bc0cf36826b2fbe7665576e9c5f4dea24742cad6795afe371f",
+        "row_count": 10,
+        "created_at": "2026-09-05T03:55:02.840Z",
+        "source_date": null
+      },
+      {
+        "dataset": "goa-mineral-blocks",
+        "version": "8144a06b7e0eab66123c7887cb260040c176f5e4e5378d78d0923755ed9f3b49",
+        "row_count": 12,
+        "created_at": "2026-09-05T03:29:33.041Z",
+        "source_date": null
+      }
+    ],
+    "source_flags": [],
+    "paid_waiting_over_15_minutes": []
+  },
+  "pipeline_receipts": {
+    "current_72h": {
+      "start": "2026-09-17T06:13:44.605Z",
+      "end": "2026-09-20T06:13:44.605Z",
+      "latest_actions": 0,
+      "states": [],
+      "substantive_buyer_or_partner_actions": 0,
+      "bounces": 0,
+      "partner_referrals": 0,
+      "limitation": "This is a lower-bound snapshot from each lead current last_action_at; it is not a live inbox history and cannot prove no newer email exists."
+    },
+    "prior_72h": {
+      "start": "2026-09-14T06:13:44.605Z",
+      "end": "2026-09-17T06:13:44.605Z",
+      "latest_actions": 0,
+      "states": [],
+      "substantive_buyer_or_partner_actions": 0,
+      "bounces": 0,
+      "partner_referrals": 0,
+      "limitation": "This is a lower-bound snapshot from each lead current last_action_at; it is not a live inbox history and cannot prove no newer email exists."
+    }
+  },
+  "inbox_status": "UNOBSERVABLE_IN_THIS_MONITOR_RUN",
+  "inbox_boundary": "No live inbox connector was available; pipeline receipts are a lower bound and no claim is made that no newer reply or bounce exists.",
+  "bottleneck": {
+    "stage": "VIEW_TO_SCOPE",
+    "evidence": "12 observed views produced no recorded validated scope or checkout.",
+    "next_reversible_experiment": "Test one clearer scope-first CTA on the highest-traffic instrumented product page."
+  },
+  "revenue": {
+    "confirmed_gross_receipt_cents": 0,
+    "net_revenue_status": "NOT_ESTABLISHED",
+    "boundary": "D1 signed live-payment rows establish gross contract receipts only. Fees, disputes, payouts, taxes and bank settlement are not included."
+  },
+  "receipt_hash": "sha256:877fb993ce78cc6d71453ec5dbc23412ba8155e17b280a89278a6c134c9e0f14"
+}

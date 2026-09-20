@@ -1,0 +1,67 @@
+{
+  "observed_at": "2026-09-07T19:47:49Z",
+  "timezone": "America/New_York",
+  "apify": {
+    "receipt": "C:\\Users\\Jesse\\Documents\\New project 2\\apify-takeover\\worktree\\the-company\\foundry\\growth\\receipts\\daily-usage-20260907T194303Z.json",
+    "receipt_hash": "sha256:60f5e4a26f21919132912ecca910c0c03d408053e5cb1ed93a745ad11b42a81a",
+    "rolling_24h": {"starts":3,"succeeded":2,"failed":1,"aborted":0,"timed_out":0,"platform_usage_usd":0.002436397,"owner_runs":3,"other_identified_account_runs":0,"unattributed_runs":0},
+    "rolling_12h": {"starts":2,"succeeded":2,"failed":0,"aborted":0,"timed_out":0,"platform_usage_usd":0.002283106,"owner_runs":2},
+    "rolling_8h": {"starts":0,"succeeded":0,"failed":0,"aborted":0,"timed_out":0,"platform_usage_usd":0.0,"owner_runs":0},
+    "failed_run": {"actor":"devto-publication-evidence","run_id":"N3EjLzVBDtoRV8qzb","owner_run":true,"started_at":"2026-09-06T19:49:51.495Z","cause":"Both articleUrl and articleId were supplied; input validation rejected the run.","customer_incident":false},
+    "complete_week_comparison": {
+      "latest_seven_dates": {"dates":"2026-08-31..2026-09-06","starts":19,"succeeded":18,"failed":1,"aborted":0,"platform_usage_usd":0.01932395},
+      "prior_seven_dates": {"dates":"2026-08-24..2026-08-30","starts":86,"succeeded":78,"failed":8,"aborted":0,"platform_usage_usd":0.151043425},
+      "change": {"starts":-67,"succeeded":-60,"failed":-7,"aborted":0,"platform_usage_usd":-0.131719475}
+    },
+    "cumulative_20d_through_partial_2026_09_07": {"starts":214,"succeeded":199,"failed":15,"aborted":0,"platform_usage_usd":0.316848389},
+    "portfolio": {"owned_actors":21,"public_actors":19,"actor_user_relationships":36,"conservative_external_user_actor_relationship_lower_bound":15,"actors_with_external_user_evidence":9,"conservative_distinct_external_account_lower_bound":6},
+    "counter_delta_since_2026_09_06_read": {"total_run_increments":12,"owner_run_rows":3,"aggregate_increments_not_reconciled_to_owner_rows":9,"classification":"activity signal only; identity, outcome, country and customer attribution unavailable"},
+    "creator_revenue_usd": 0.0
+  },
+  "conversion_72h": {
+    "window": {"start":"2026-09-04T19:44:24.811Z","end":"2026-09-07T19:44:24.811Z"},
+    "anonymous_non_canary_events": 24,
+    "anonymous_non_canary_sessions": 23,
+    "landing_or_general_sessions": 17,
+    "agent_api_sessions": 3,
+    "india_company_audit_sessions": 3,
+    "offer_view_sessions": 0,
+    "scope_validation_started": 0,
+    "scope_validation_succeeded": 0,
+    "checkout_redirected": 0,
+    "confirmed_stripe_payments": 0,
+    "verified_revenue_usd": 0.0,
+    "automatic_fulfillment_successes": 0,
+    "automatic_fulfillment_failures": 0,
+    "automatic_fulfillment_retries": 0,
+    "repeat_use": 0,
+    "substantive_buyer_replies": null,
+    "bounces": null,
+    "partner_referrals": null,
+    "prior_72h": {"status":"UNOBSERVABLE_EXACT","nearest_prior_receipt":{"ended_at":"2026-09-04T19:22:30Z","anonymous_non_canary_page_view_sessions":68,"gap_to_current_window_minutes":22}},
+    "change": {"status":"UNOBSERVABLE_EXACT","nearest_receipt_session_delta":-45},
+    "acquisition_sessions": {"direct":19,"google_groups_referral":2,"google_organic":1,"civicdataforge_referral":1},
+    "country_signals": {"united_states":"UNOBSERVABLE_CURRENT","india":"UNOBSERVABLE_CURRENT","china":"UNOBSERVABLE_CURRENT","reason":"The current authenticated aggregate report omits country and direct D1 authentication returned 401; no country was inferred from channel or page-view percentages."},
+    "single_measured_bottleneck": "Traffic-to-qualified-action conversion: 23 anonymous sessions produced zero offer views, scope validations, checkout redirects or payments.",
+    "next_reversible_experiment": {"name":"first-screen tagged offer exposure","duration_hours":72,"design":"On the three receiving funnels, expose one existing proof-led offer CTA above the fold with a unique campaign tag; change no price or product scope.","success_measure":"At least one offer view and one scope-validation start; confirmed Stripe payment remains the revenue gate.","mutation_status":"recommended_only_not_executed_by_monitor"}
+  },
+  "india_starter": {
+    "observation_deadline": "2026-09-12T23:59:59Z",
+    "health": {"state":"ATTENTION","checked_at":"2026-09-07T19:42:12.166Z","alerts":[{"dataset":"gba-municipal-assets","code":"FAILED_LAST_GOOD_RETAINED","error":"UPSTREAM_RETRY_EXHAUSTED"}]},
+    "official_source_probe": {"checked_at":"2026-09-07T19:44:24Z","url_host":"geo.bbmp.gov.in","http_status":502,"state":"FAILED"},
+    "last_good_source": {"dataset":"gba-municipal-assets","version":"31277522feb7c5711144940fc6e637311f20a7abfccc0027315b1d2a1638f810","row_count":6817,"created_at":"2026-09-05T03:29:33.041Z","retained":true},
+    "checkout_enabled": false,
+    "orders": {"state":"UNOBSERVABLE","reason":"Authenticated Cloudflare D1 query returned 401"},
+    "events": {"state":"UNOBSERVABLE","reason":"Authenticated Cloudflare D1 query returned 401"},
+    "paid_orders_older_than_15m_awaiting_activation": 0,
+    "paid_order_evidence": "UNOBSERVABLE",
+    "deadline_result": "PENDING"
+  },
+  "yellow_gates": [
+    "GBA refresh failed and retained the last-good 6,817-row version; an independent official-source probe returned HTTP 502.",
+    "India starter order and event counts are UNOBSERVABLE because the authenticated D1 client returned Cloudflare 401.",
+    "Exact prior adjacent 72-hour conversion comparison is unavailable; the nearest stored prior receipt ends 22 minutes before the current window starts.",
+    "No confirmed Stripe payment or revenue receipt was observed.",
+    "Nine Apify aggregate run-counter increments are not attributable to a person, customer, outcome or country."
+  ]
+}
