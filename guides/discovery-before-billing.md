@@ -1,16 +1,21 @@
 # Discover government-record tools before authorizing a billable run
 
-CivicDataForge's public remote MCP discovery does not require an Apify token. Actual tool calls do. Keep those two steps separate when building an agent integration.
+CivicDataForge's public remote MCP discovery does not require a credential. Execution requires the credential for the chosen route: an issued CivicDataForge key for the bounded first-party evidence gateway, or the caller's own Apify token for direct Actor and run-management access. Keep discovery, authorization, execution and billing separate.
 
 ## Enumerate the current schema
 
-Connect your Streamable HTTP MCP client to `https://civicdataforge.pages.dev/mcp`. Initialize and list tools without attaching a credential. Read the returned input schema rather than guessing parameters from the product name. The September 6 remote readback exposed ten focused Actor tools plus four run/storage helpers: `get-actor-run`, `get-dataset-items`, `get-key-value-store-record` and `abort-actor-run`. The installable stdio bundle and remote relay need not expose the same helper set. The broader [catalog](https://civicdataforge.pages.dev/api-catalog.json) contains additional products.
+Connect your Streamable HTTP MCP client to `https://civicdataforge.pages.dev/mcp`. Initialize and list tools without attaching a credential. Read the returned input schema rather than guessing parameters from the product name. A September 23, 2026 remote readback exposed ten focused Actor tools plus four run/storage helpers: `get-actor-run`, `get-dataset-items`, `get-key-value-store-record` and `abort-actor-run`. Discovery does not grant access to every listed tool: the first-party key is limited to its bounded evidence workflow; generic run/storage helpers require caller-owned Apify access. The installable stdio bundle and remote relay need not expose the same helper set. The broader [catalog](https://civicdataforge.pages.dev/api-catalog.json) contains additional products.
 
 ## Choose one supported job
 
 For a property query, select a jurisdiction the corresponding Actor actually supports. For an exact company lookup, use the required identifier and country-specific source. A product covering one registry cannot establish worldwide coverage.
 
-Before execution, inspect the Actor's current Store price, data source notes, input schema and output limits. Use your own Apify account and the raw token in the `X-Apify-Token` header. Never put a seller credential in a client, URL or source repository. Do not send your token to public issues or support.
+Choose the commercial route before execution:
+
+- **First-party gateway:** follow the current [agent connection guide](https://civicdataforge.pages.dev/connect-agent) and [API contract](https://civicdataforge.pages.dev/openapi/civicdataforge-evidence-api-v1.json). Use the issued CivicDataForge key in `Authorization: Bearer YOUR_CIVICDATAFORGE_KEY` or `X-CivicDataForge-Key`. Preserve a stable idempotency key for retries. This is not general access to the seller's Apify account.
+- **Direct Apify:** inspect the Actor's current Store price, source notes, input schema and output limits. Use your own Apify account and raw token in `X-Apify-Token` for direct Actor and run-management calls.
+
+Do not send both credential types in one request or substitute one for the other. Never put credentials in a URL, source repository, public issue or support message. Inspect the current offer before granting payment authority; a successful discovery request is not a purchase.
 
 ## Preserve the receipt, not just the answer
 
