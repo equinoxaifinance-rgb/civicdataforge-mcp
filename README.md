@@ -42,8 +42,8 @@ X-Apify-Token: YOUR_APIFY_TOKEN
 
 The hosted CivicDataForge path meters successful bounded evidence requests through its active commercial route;
 direct Actor calls remain caller-owned Apify usage. Each Actor has its own pricing, input schema, source notes,
-and usage limits on its Store page. Never send a CivicDataForge key to an Actor endpoint or an Apify token to the
-hosted gateway.
+and usage limits on its Store page. Never send a CivicDataForge key to an Actor endpoint. On the shared remote
+MCP endpoint, keep the credential types in their documented headers and never send both in one request.
 
 ## Run the installable stdio gateway
 
