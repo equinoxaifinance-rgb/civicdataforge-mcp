@@ -2,6 +2,8 @@
 
 Developer guides: [discover tools before billing](https://github.com/equinoxaifinance-rgb/civicdataforge-mcp/blob/main/guides/discovery-before-billing.md) · [inspect the Bengaluru sample](https://github.com/equinoxaifinance-rgb/civicdataforge-mcp/blob/main/guides/bengaluru-sample.md).
 
+**Start with one request:** [try the no-charge input and purchase-option check](https://civicdataforge.pages.dev/connect-agent?utm_source=github&utm_medium=developer&utm_campaign=first_request_20260925#try-request), or [copy the cURL walkthrough](guides/first-request.md). This validates request syntax and current purchase options; it does not retrieve evidence, establish record coverage, or initiate payment.
+
 [![CivicDataForge MCP server](https://glama.ai/mcp/servers/equinoxaifinance-rgb/civicdataforge-mcp/badges/card.svg)](https://glama.ai/mcp/servers/equinoxaifinance-rgb/civicdataforge-mcp)
 [![CivicDataForge MCP quality score](https://glama.ai/mcp/servers/equinoxaifinance-rgb/civicdataforge-mcp/badges/score.svg)](https://glama.ai/mcp/servers/equinoxaifinance-rgb/civicdataforge-mcp)
 [![AllMCPs Verified](https://allmcps.com/api/badge/civicdataforge-government-evidence)](https://allmcps.com/mcp/civicdataforge-government-evidence?verify=6641b3ab-b25c-4414-a18a-8dfc47acf45e)
@@ -95,8 +97,10 @@ Actor 的数据限制；这些数据用于研究和合规辅助，不替代主�
 https://civicdataforge.pages.dev/mcp
 ```
 
-公开的 `initialize` 与 `tools/list` 无需凭证。执行工具时，调用方需要自己的 Apify 账户与 API Token，并通过
-`X-Apify-Token: YOUR_APIFY_TOKEN` 传递。CivicDataForge 不在仓库、npm 包或返回结果中嵌入发布者 Token。
+公开的 `initialize` 与 `tools/list` 无需凭证。首次使用可先访问 [免费请求检查](https://civicdataforge.pages.dev/connect-agent#try-request)，它不检索记录，也不发起付款。
+托管证据网关使用已激活的 CivicDataForge 密钥，通过 `Authorization: Bearer YOUR_CIVICDATAFORGE_KEY` 传递。
+如选择直接运行 Apify Actor，则使用调用方自己的 `X-Apify-Token: YOUR_APIFY_TOKEN`。同一请求不要同时发送两类密钥。
+CivicDataForge 不在仓库、npm 包或返回结果中嵌入发布者 Token。
 
 简体中文完整接入手册提供两个从单一标识符到证据凭证的可复制路径：一个已支持美国辖区的
 物业地址，以及一个印度公司 CIN。手册明确列出同步 REST 端点、输入、来源字段、新鲜度字段、
