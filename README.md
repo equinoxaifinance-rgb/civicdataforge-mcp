@@ -2,6 +2,8 @@
 
 Developer guides: [discover tools before billing](https://github.com/equinoxaifinance-rgb/civicdataforge-mcp/blob/main/guides/discovery-before-billing.md) · [inspect the Bengaluru sample](https://github.com/equinoxaifinance-rgb/civicdataforge-mcp/blob/main/guides/bengaluru-sample.md).
 
+n8n: [validate one public property request before paying](guides/n8n/README.md) — a bounded, MIT-licensed client workflow; no credentials, evidence retrieval or automatic purchase.
+
 **Start with one request:** [try the no-charge input and purchase-option check](https://civicdataforge.pages.dev/connect-agent?utm_source=github&utm_medium=developer&utm_campaign=first_request_20260925#try-request), or [copy the cURL walkthrough](guides/first-request.md). This validates request syntax and current purchase options; it does not retrieve evidence, establish record coverage, or initiate payment.
 
 [![CivicDataForge MCP server](https://glama.ai/mcp/servers/equinoxaifinance-rgb/civicdataforge-mcp/badges/card.svg)](https://glama.ai/mcp/servers/equinoxaifinance-rgb/civicdataforge-mcp)
