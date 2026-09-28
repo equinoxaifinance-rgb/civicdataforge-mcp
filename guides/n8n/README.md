@@ -1,12 +1,14 @@
 # Check one property request in n8n before paying
 
-Import [civicdataforge-free-quote.workflow.json](civicdataforge-free-quote.workflow.json) into an isolated n8n workspace. It makes one no-charge request to CivicDataForge's quote endpoint, checks the response, and stops with a separate purchase-route link. No API key is needed for this check.
+**Start with [the approved template in n8n's library](https://n8n.io/workflows/20002-validate-us-property-request-scope-with-civicdataforge-and-http-request/).** Choose **Use for free** and import it into your workspace. It makes one no-charge request to CivicDataForge's quote endpoint, checks the response, and stops with a separate purchase-route link. No CivicDataForge API key is needed for this check; n8n hosting may have its own costs.
+
+The [repository JSON](civicdataforge-free-quote.workflow.json) remains an alternative client artifact, not a byte-identical copy of the directory version. Prefer the approved listing for n8n onboarding.
 
 **A ready quote is input validation, not government evidence, address coverage, a permit finding, clearance or payment.** The workflow does not run an Actor, collect records or include the private data engine.
 
 ## Use the workflow
 
-1. In an existing authorized n8n editor, create an empty workflow and choose **Import from File**. Select the JSON above. Use an isolated workspace: its stable workflow ID must not overwrite an unrelated workflow.
+1. Open the approved listing and choose **Use for free**. Follow n8n's import option for your workspace. If using the alternative repository JSON, create an empty workflow and choose **Import from File** in an isolated workspace; its stable workflow ID must not overwrite an unrelated workflow.
 2. Read the sticky note and open **Choose input**. Replace the public example address, city and state with concrete public values. Do not put keys or private information in the fields. The Orlando example is not a claim that the address has an STR permit.
 3. Leave the workflow unpublished and use **Execute workflow** manually.
 4. Inspect the final node's JSON, not only n8n's green execution indicator. `scope_ready_not_evidence` means the free quote was accepted; `paymentAttempted` and `evidenceRetrieved` remain false.
@@ -31,7 +33,7 @@ Only a manual trigger, grouped input, one fixed free HTTP destination, response 
 
 The wrapper was imported/exported with matching graph bytes in n8n 2.40.7 on Node 24.19.0. Native CLI success reached `scope_ready_not_evidence`; the invalid mapping case reached `rejected/UNRESOLVED_TEMPLATE_INPUT`. Packaged-code tests cover transport, malformed responses, expiry, wrong task, unexpected charge and malicious purchase-link substitution. These checks establish the bounded client behavior, not paid fulfillment.
 
-Editor-canvas inspection remains uncompleted: a clean local instance opened its owner setup form, and no credentials were created. This is not an n8n-certified or template-directory-listed integration. The written editor import steps remain to be visually verified after owner setup. No campaign/source tag is sent; do not label use as an attributed n8n referral without separate evidence.
+The directory template was approved and publicly listed on September 28, 2026 (template **20002**). This is template approval, not certification of paid fulfillment or a verified-creator badge. The approved directory artifact has its own reviewed layout and SHA-256 `a0b4f9e8236da318d6367a83517a95b15e4564d4dd1120d74c631a8707260559`; it passed a native manual execution reaching `scope_ready_not_evidence`. The repository JSON below retains its separate hash and test scope. No campaign/source tag is sent by either workflow; a site visit referred by n8n can be measured separately, but an untagged API call is not proof of an n8n referral, a unique user or a purchase.
 
 For local operators, use a private new `N8N_USER_FOLDER` and bind both editor and task-runner broker to `127.0.0.1`. Use unused local ports, no public tunnel, and the official [n8n setup guide](https://docs.n8n.io/deploy/host-n8n/install-options/install-with-npm). The [server CLI](https://docs.n8n.io/deploy/host-n8n/configure-n8n/use-the-command-line) supports `import:workflow`, `export:workflow` and manual `execute --id=<ID>`. Keep private database/export/log files out of anything you share. A fresh editor requires owner setup; do not bypass it. Node 25 and n8n 3 are not the tested baseline.
 
