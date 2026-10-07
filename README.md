@@ -35,6 +35,12 @@ Use this Streamable HTTP endpoint:
 https://civicdataforge.pages.dev/mcp
 ```
 
+In Claude Code:
+
+```bash
+claude mcp add --transport http civicdataforge https://civicdataforge.pages.dev/mcp
+```
+
 Public `initialize` and `tools/list` discovery work without a credential. The hosted gateway supports two explicit caller-owned paths:
 
 - For CivicDataForge's metered hosted evidence gateway, send the issued CivicDataForge key as either `Authorization: Bearer YOUR_CIVICDATAFORGE_KEY` or `X-CivicDataForge-Key: YOUR_CIVICDATAFORGE_KEY`.
@@ -84,8 +90,8 @@ caller supplies `APIFY_TOKEN` for actual Actor runs.
 }
 ```
 
-This GitHub install route is the current portable STDIO path. The hosted Apify MCP endpoint remains available
-for clients that support remote MCP directly.
+This GitHub install route is the current portable STDIO path. Clients that support remote MCP directly can use
+the hosted endpoint `https://civicdataforge.pages.dev/mcp` described above instead.
 
 ## 简体中文：接入与使用边界
 

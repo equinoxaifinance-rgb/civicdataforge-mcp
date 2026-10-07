@@ -35,3 +35,21 @@ test("real stdio initialize, tools/list, and credential failure path", async () 
     await client.close();
   }
 });
+
+test("the server starts when launched through a symlink, as npx and npm bins do", { skip: process.platform === "win32" }, async () => {
+  const { mkdtempSync, symlinkSync, rmSync } = await import("node:fs");
+  const { tmpdir } = await import("node:os");
+  const path = await import("node:path");
+  const dir = mkdtempSync(path.join(tmpdir(), "civicdataforge-bin-"));
+  const link = path.join(dir, "civicdataforge-mcp");
+  symlinkSync(fileURLToPath(new URL("../server.mjs", import.meta.url)), link);
+  const transport = new StdioClientTransport({ command: process.execPath, args: [link], env: { ...process.env, APIFY_TOKEN: "placeholder" } });
+  const client = new Client({ name: "civicdataforge-bin-test", version: "1.0.0" });
+  try {
+    await client.connect(transport);
+    assert.equal((await client.listTools()).tools.length, 10);
+  } finally {
+    await client.close();
+    rmSync(dir, { recursive: true, force: true });
+  }
+});
