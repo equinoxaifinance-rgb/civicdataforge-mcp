@@ -128,7 +128,7 @@ export async function callActorTool(name, input, {
   if (!token || token === "placeholder") {
     return textResult({
       error: "APIFY_TOKEN_REQUIRED",
-      message: "Set APIFY_TOKEN to an Apify API token before calling a CivicDataForge tool.",
+      message: "Set APIFY_TOKEN to an Apify API token before calling a CivicDataForge tool. Create one at https://console.apify.com/settings/integrations",
     }, true);
   }
 
