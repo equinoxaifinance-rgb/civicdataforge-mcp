@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { realpathSync } from "node:fs";
 import { readFile } from "node:fs/promises";
 import { pathToFileURL } from "node:url";
 import { ApifyClient } from "apify-client";
@@ -127,7 +128,7 @@ export async function callActorTool(name, input, {
   if (!token || token === "placeholder") {
     return textResult({
       error: "APIFY_TOKEN_REQUIRED",
-      message: "Set APIFY_TOKEN to an Apify API token before calling a CivicDataForge tool.",
+      message: "Set APIFY_TOKEN to an Apify API token before calling a CivicDataForge tool. Create one at https://console.apify.com/settings/integrations",
     }, true);
   }
 
@@ -175,7 +176,17 @@ async function main() {
   await server.connect(new StdioServerTransport());
 }
 
-if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
+// npx and npm-installed bins launch through a symlink, so compare real paths.
+function isEntry(argvPath) {
+  if (!argvPath) return false;
+  try {
+    return pathToFileURL(realpathSync(argvPath)).href === pathToFileURL(realpathSync(new URL(import.meta.url))).href;
+  } catch {
+    return import.meta.url === pathToFileURL(argvPath).href;
+  }
+}
+
+if (isEntry(process.argv[1])) {
   main().catch((error) => {
     console.error(error);
     process.exitCode = 1;
