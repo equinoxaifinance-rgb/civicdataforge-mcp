@@ -28,7 +28,7 @@
     "test:package-boundary": "node --test test/package-boundary.test.mjs"
   },
   "dependencies": {
-    "@modelcontextprotocol/sdk": "1.29.0",
+    "@modelcontextprotocol/sdk": "1.32.1",
     "apify-client": "2.22.1"
   }
 }
