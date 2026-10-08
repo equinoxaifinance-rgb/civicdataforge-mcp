@@ -27,6 +27,16 @@ Live STR proof: <https://apify.com/civicdataforge/str-permit-registry/examples/c
 
 Dated product proof: <https://civicdataforge.pages.dev/proof>
 
+## Pricing at a glance
+
+Tool discovery and the request check are free. Evidence calls are paid per result:
+
+- Apify Store (Government Evidence Gateway): $0.01 per Actor start plus $0.10 per evidence packet on Apify's Free plan, lower on paid Apify plans.
+- AWS Marketplace API/MCP: $0.10 per successful evidence request; failed requests and idempotent retries are not billed.
+- One-off audits and weekly permit monitoring are also available.
+
+Current prices and terms: <https://civicdataforge.pages.dev/pricing.md>
+
 ## Add the remote MCP server
 
 Use this Streamable HTTP endpoint:
